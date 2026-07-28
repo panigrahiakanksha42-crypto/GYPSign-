@@ -4,6 +4,7 @@ import { FaShieldHalved, FaInstagram, FaQuoteLeft, FaStar, FaChevronLeft, FaChev
 import { FaCrown, FaCouch, FaGem, FaMapMarkedAlt, FaClock, FaHeart, FaHandshake, FaMoneyBillWave, FaHeadset } from 'react-icons/fa';
 import AnimatedCounter from '../Component/AnimatedCounter';
 import image1 from '../assets/image/1.jpeg';
+import image2 from '../assets/image/2.jpeg';
 import '../CSS/Home.css';
 import { MarqueeTestimonials } from '../components/ui/marquee-card';
 
@@ -50,7 +51,6 @@ const testimonials = [
 ];
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
   const [showGatekeeper, setShowGatekeeper] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -71,13 +71,6 @@ const Home = () => {
     return () => clearInterval(testTimer);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
   const pageVariants = {
     initial: { opacity: 0, y: 20 },
     in: { opacity: 1, y: 0 },
@@ -95,24 +88,6 @@ const Home = () => {
 
   return (
     <AnimatePresence mode='wait'>
-      {loading ? (
-        <motion.div 
-          key="preloader"
-          className="preloader d-flex flex-column justify-content-center align-items-center bg-dark text-white position-fixed w-100 h-100 top-0 start-0 z-3"
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.8 } }}
-        >
-          <h1 className="fw-bold mb-3" style={{fontFamily: 'Playfair Display, serif'}}>GYP <span style={{fontWeight: 300}}>SIGNATURES</span></h1>
-          <div className="loader-bar">
-            <motion.div 
-              className="loader-progress"
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 1.5 }}
-            />
-          </div>
-        </motion.div>
-      ) : (
         <motion.div
           key="content"
           initial="initial"
@@ -422,7 +397,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
                 >
-                  <img src={image1} alt="Founder" className="img-fluid rounded-4 shadow founder-img" />
+                  <img src={image2} alt="Founder" className="img-fluid rounded-4 shadow founder-img" />
                 </motion.div>
                 
                 <motion.div 
@@ -434,7 +409,7 @@ const Home = () => {
                 >
                   <h2 className="fw-bold mb-4 display-4" style={{fontFamily: 'Playfair Display, serif', color: '#111'}}>The Visionary</h2>
                   <h4 className="mb-4 fw-bold" style={{color: '#111'}}>Bhanu Kiran Pasula</h4>
-                  <h6 className="mb-5 text-uppercase letter-spacing-1" style={{color: '#C8A03A'}}>Founder & CEO</h6>
+                  <h6 className="mb-5 text-uppercase letter-spacing-1" style={{color: '#C8A03A'}}>FOUNDER & CEO</h6>
                   
                   <div className="position-relative p-4 p-md-5 mb-5 rounded-4 bg-light">
                     <FaQuoteLeft className="position-absolute top-0 start-0 translate-middle text-white bg-warning rounded-circle p-2" size={40} style={{backgroundColor: '#C8A03A'}} />
@@ -542,7 +517,6 @@ const Home = () => {
           </section>
 
         </motion.div>
-      )}
     </AnimatePresence>
   );
 };
