@@ -1,0 +1,322 @@
+/* ==========================================================================
+   PROJECT PORTFOLIO STYLES
+   ========================================================================== */
+
+/* 1. Hero Banner */
+.portfolio-hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+@media (max-width: 768px) {
+  .portfolio-hero {
+    min-height: 80vh;
+    padding-top: 80px;
+  }
+}
+
+/* 3. Project Category Cards */
+.portfolio-cat-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.portfolio-cat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.portfolio-cat-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: transform 0.7s ease;
+}
+
+.portfolio-cat-card:hover .portfolio-cat-bg {
+  transform: scale(1.1);
+}
+
+.portfolio-cat-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+  z-index: 2;
+}
+
+.portfolio-cat-content {
+  position: relative;
+  z-index: 3;
+}
+
+.portfolio-cat-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* 5. Completed Projects Grid (Shares styling with Showcase but unique layout) */
+.product-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Black shadow on hover */
+}
+
+.product-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 280px; /* Force all images to be the exact same height */
+  width: 100%;
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fill the box perfectly without distortion */
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-img-wrapper img {
+  transform: scale(1.08);
+}
+
+.gallery-filter-btn {
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 8px 20px;
+  border-radius: 30px;
+  color: #555;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.gallery-filter-btn:hover, .gallery-filter-btn.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* 6. Before & After Slider */
+.ba-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.ba-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ba-image-after {
+  z-index: 1;
+}
+
+.ba-image-before {
+  z-index: 2;
+  /* Clip-path is applied dynamically via inline styles in React based on slider value */
+}
+
+/* Custom Range Input */
+.ba-slider-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  opacity: 0; /* Invisible but draggable */
+  cursor: ew-resize;
+}
+
+/* Slider Handle Visual */
+.ba-slider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #fff;
+  z-index: 2;
+  pointer-events: none; /* Let clicks pass to the invisible range input */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transform: translateX(-50%);
+}
+
+.ba-slider-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: #C8A03A;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.ba-label {
+  position: absolute;
+  bottom: 20px;
+  padding: 6px 15px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 3;
+  pointer-events: none;
+}
+.ba-label-before { right: 20px; }
+.ba-label-after { left: 20px; }
+
+
+/* 7. Design Process Timeline */
+.process-timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .process-timeline {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  /* Connecting line on desktop */
+  .process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 40px; /* Aligned with icon center */
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: 1;
+  }
+}
+
+/* Connecting line on mobile */
+@media (max-width: 991px) {
+  .process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    width: 2px;
+    background: #e0e0e0;
+    z-index: 1;
+  }
+}
+
+.process-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
+  padding: 0 15px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 991px) {
+  .process-step {
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 0;
+  }
+}
+
+.process-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border: 2px solid #C8A03A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #C8A03A;
+  font-size: 1.5rem;
+  box-shadow: 0 10px 20px rgba(200, 160, 58, 0.15);
+  transition: all 0.3s ease;
+}
+
+.process-step:hover .process-icon-wrapper {
+  background: #C8A03A;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+@media (max-width: 991px) {
+  .process-icon-wrapper {
+    margin: 0 25px 0 0;
+    flex-shrink: 0;
+  }
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  height: 100%;
+}

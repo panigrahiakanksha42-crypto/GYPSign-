@@ -1,0 +1,295 @@
+/* ==========================================================================
+   GLOBAL NAVBAR STYLES & BEHAVIOR
+   ========================================================================== */
+.main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Transparent state at the top */
+.main-header.transparent {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+/* Scrolled state with solid background */
+.main-header.scrolled {
+  background-color: rgba(17, 17, 17, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.logo-text {
+  font-size: 2rem;
+}
+.main-header.scrolled .logo-text {
+  font-size: 1.6rem;
+}
+
+/* ==========================================================================
+   DESKTOP NAVIGATION
+   ========================================================================== */
+.nav-bar ul {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.nav-link-item {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.nav-link-item:hover, .nav-link-item.active {
+  color: #C8A03A !important;
+}
+
+/* Gold Underline Animation */
+.nav-link-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #C8A03A;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link-item:hover::after, .nav-link-item.active::after {
+  width: 100%;
+}
+
+/* MEGA MENU STYLING */
+.nav-dropdown {
+  padding: 20px 0;
+}
+
+.mega-menu {
+  display: none;
+  background-color: #ffffff;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+/* Show Mega Menu on Hover */
+.nav-dropdown.show .mega-menu,
+.nav-dropdown:hover .mega-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mega-menu-item {
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.mega-menu-item:hover {
+  background-color: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.mega-icon {
+  font-size: 1.4rem;
+  color: #C8A03A;
+}
+
+.mega-menu-item h6 {
+  transition: color 0.3s ease;
+}
+
+.mega-menu-item:hover h6 {
+  color: #C8A03A !important;
+}
+
+/* CTA BUTTON */
+.cta-btn {
+  background-color: #C8A03A !important;
+  color: #111111 !important;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid #C8A03A;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #111111 !important;
+  color: #C8A03A !important;
+  border-color: #C8A03A !important;
+}
+
+/* ==========================================================================
+   MOBILE MENU DRAWER (FULL SCREEN)
+   ========================================================================== */
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+.mobile-menu-overlay-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.mobile-menu-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  background-color: #111111;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+}
+
+.mobile-menu-drawer.show {
+  pointer-events: auto;
+}
+
+.mobile-menu-drawer.show .mobile-menu-overlay-bg {
+  opacity: 1;
+}
+
+.mobile-menu-drawer.show .mobile-menu-content {
+  transform: translateX(0);
+}
+
+.close-btn {
+  color: #C8A03A;
+  transition: transform 0.3s ease;
+}
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Mobile Nav Items & Accordion */
+.mobile-nav-item {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.mobile-nav-item a, .mobile-nav-item span {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-item a.active, .mobile-nav-item a:hover {
+  color: #C8A03A !important;
+}
+
+.accordion-icon {
+  color: #C8A03A;
+  font-size: 0.9rem;
+}
+
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.mobile-submenu.expanded {
+  max-height: 300px;
+}
+
+.mobile-submenu a:hover {
+  color: #C8A03A !important;
+  opacity: 1 !important;
+}
+
+.social-link {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+  color: #C8A03A !important;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   PAGE TRANSITION OVERLAY
+   ========================================================================== */
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #111111;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.transition-loader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(200, 160, 58, 0.3);
+  border-top-color: #C8A03A;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   MISC (MARQUEE)
+   ========================================================================== */
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-content-scrolling {
+  animation: scrollMarquee 20s linear infinite;
+  display: inline-block;
+  padding-left: 100%;
+}

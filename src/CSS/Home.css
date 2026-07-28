@@ -1,0 +1,138 @@
+/* ==========================================================================
+   HOME PAGE STYLES (10 Sections)
+   ========================================================================== */
+.letter-spacing-1 { letter-spacing: 1px; }
+.letter-spacing-2 { letter-spacing: 2px; }
+
+/* Gatekeeper Button Hover */
+.gatekeeper-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* 1. Hero Buttons */
+.btn-cta-primary:hover {
+  background-color: #f3e5ab !important;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 575px) {
+  .w-sm-100 {
+    width: 100% !important;
+  }
+}
+
+/* 2. Hero Responsive Styles */
+.hero-title {
+  font-size: calc(2.2rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 4rem; /* Equivalent to display-3 */
+  }
+}
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 110px !important;
+  }
+  .hero-content-container {
+    padding-bottom: 90px !important;
+  }
+  .stat-number {
+    font-size: 1.25rem !important;
+  }
+  .stat-label {
+    font-size: 0.6rem !important;
+    letter-spacing: 0px !important;
+  }
+}
+
+/* Founder Image Responsive Styles */
+.founder-img {
+  width: 100%;
+  object-fit: cover;
+  object-position: top center;
+  height: 600px;
+}
+@media (max-width: 991px) {
+  .founder-img {
+    height: 450px;
+  }
+}
+@media (max-width: 575px) {
+  .founder-img {
+    height: 400px;
+  }
+}
+
+/* 3. Statistics Cards */
+.stat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  background-color: rgba(255,255,255,0.05) !important;
+}
+
+/* 10. Instagram Gallery */
+.instagram-item img {
+  transform: scale(1);
+}
+.instagram-item:hover img {
+  transform: scale(1.1) !important;
+}
+.instagram-item:hover .instagram-overlay {
+  opacity: 1 !important;
+}
+
+/* Testimonial slider button hover */
+.rounded-circle.bg-light:hover {
+  background-color: #C8A03A !important;
+  color: #fff !important;
+  border-color: #C8A03A !important;
+  transition: all 0.3s ease;
+}
+.rounded-circle.bg-light:hover svg {
+  fill: #fff !important;
+}
+
+/* 4. The GYP Difference Cards */
+.gyp-difference-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.gyp-difference-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+}
+.gyp-difference-card .icon-wrapper {
+  transition: all 0.4s ease;
+}
+.gyp-difference-card:hover .icon-wrapper {
+  background-color: #C8A03A !important;
+  transform: scale(1.1);
+}
+.gyp-difference-card .card-icon {
+  transition: all 0.4s ease;
+}
+.gyp-difference-card:hover .card-icon {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* 5. Why Choose GYP Cards */
+.why-choose-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+.why-choose-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08) !important;
+  border-color: #C8A03A !important;
+}
+.why-choose-card:hover .icon-container {
+  background-color: #C8A03A !important;
+  transform: scale(1.1);
+}
+.why-choose-card:hover .why-icon {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
