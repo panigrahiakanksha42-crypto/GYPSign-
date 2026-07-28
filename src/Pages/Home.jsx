@@ -408,7 +408,7 @@ const Home = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   <h2 className="fw-bold mb-4 display-4" style={{fontFamily: 'Playfair Display, serif', color: '#111'}}>The Visionary</h2>
-                  <h4 className="mb-4 fw-bold" style={{color: '#111'}}>Bhanu Kiran Pasula</h4>
+                  <h4 className="mb-4 fw-bold" style={{color: '#111'}}>Gayathri Posey</h4>
                   <h6 className="mb-5 text-uppercase letter-spacing-1" style={{color: '#C8A03A'}}>FOUNDER & CEO</h6>
                   
                   <div className="position-relative p-4 p-md-5 mb-5 rounded-4 bg-light">
