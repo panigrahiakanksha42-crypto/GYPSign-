@@ -16,11 +16,13 @@ import Contactus from './Pages/Contactus';
 import HomeSiteVisit from './Pages/HomeSiteVisit';
 import Footer from './Component/Footer';
 import Whatsappicon from './Component/Whatsappicon';
+import ScrollToTop from './Component/Scrolltotop';
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-container d-flex flex-column min-vh-100">
         <Navbar />
         <main className="flex-grow-1">

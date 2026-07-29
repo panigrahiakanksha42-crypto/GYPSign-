@@ -95,18 +95,6 @@ const Portfolio = () => {
               Explore our curated portfolio of completed projects. Every space reflects our commitment to exceptional craftsmanship, elegant design, and timeless luxury.
             </motion.p>
             
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.8 }}
-            >
-              <button className="portfolio-hero-btn" onClick={() => {
-                document.getElementById('projects-grid').scrollIntoView({ behavior: 'smooth' });
-              }}>
-                <span>Explore Projects</span>
-                <FaArrowRight className="ms-3" />
-              </button>
-            </motion.div>
           </div>
         </motion.div>
       </section>
@@ -229,9 +217,6 @@ const Portfolio = () => {
                 </div>
               </div>
               
-              <button className="btn btn-dark rounded-pill py-3 px-4 fw-bold text-uppercase mt-auto d-inline-flex align-items-center justify-content-center gap-2">
-                View Complete Project <FaArrowRight />
-              </button>
             </div>
           </div>
         </div>
@@ -334,9 +319,6 @@ const Portfolio = () => {
             <div className="ba-label ba-label-before">Before</div>
           </div>
           
-          <button className="btn btn-gold-outline rounded-pill mt-5 px-5 py-3 fw-bold text-uppercase">
-            View More Transformations
-          </button>
         </div>
       </section>
 
@@ -413,8 +395,8 @@ const Portfolio = () => {
             Whether you're building a new home or renovating your existing space, our luxury design experts are ready to bring your vision to life.
           </p>
           <div className="d-flex justify-content-center gap-3 flex-column flex-sm-row">
-            <button className="btn btn-gold rounded-pill px-5 py-3 fw-bold text-uppercase">Book Consultation</button>
-            <button className="btn btn-outline-light rounded-pill px-5 py-3 fw-bold text-uppercase">Contact Us</button>
+            <button className="btn btn-gold rounded-pill px-5 py-3 fw-bold text-uppercase" onClick={() => navigate('/experience/center')}>Book Consultation</button>
+            <button className="btn btn-outline-light rounded-pill px-5 py-3 fw-bold text-uppercase" onClick={() => navigate('/contact')}>Contact Us</button>
           </div>
         </div>
       </section>

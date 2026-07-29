@@ -255,8 +255,12 @@ const Productshowcase = () => {
             Looking for custom furniture designed exclusively for your home? Book a private consultation with our experts today.
           </p>
           <div className="d-flex justify-content-center gap-3 flex-column flex-sm-row">
-            <button className="btn btn-gold rounded-pill px-5 py-3 fw-bold text-uppercase">Book Consultation</button>
-            <button className="btn btn-outline-light rounded-pill px-5 py-3 fw-bold text-uppercase">Call Now</button>
+            <button 
+              className="btn btn-gold rounded-pill px-5 py-3 fw-bold text-uppercase"
+              onClick={() => navigate('/experience/center')}
+            >
+              Book Consultation
+            </button>
           </div>
         </div>
       </section>
