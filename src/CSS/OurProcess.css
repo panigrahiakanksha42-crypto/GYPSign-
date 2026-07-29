@@ -1,0 +1,498 @@
+/* ==========================================================================
+   OUR PROCESS PAGE STYLES
+   ========================================================================== */
+
+:root {
+  --process-royal-blue: #4169E1;
+  --process-royal-purple: #540788;
+  --process-light-lavender: #F5F2FF;
+  --process-soft-gray: #F8F9FA;
+  --process-white: #FFFFFF;
+  --process-dark: #111111;
+  --process-text: #5F6B7A;
+}
+
+.process-page {
+  font-family: 'Inter', sans-serif;
+  color: var(--process-text);
+  background-color: var(--process-white);
+  overflow-x: hidden;
+}
+
+.process-page h1, 
+.process-page h2, 
+.process-page h3, 
+.process-page h4, 
+.process-page h5 {
+  color: var(--process-dark);
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn-process-solid {
+  background: var(--process-royal-blue);
+  color: var(--process-white);
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(65, 105, 225, 0.2);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-process-solid:hover {
+  background: var(--process-royal-purple);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(84, 7, 136, 0.3);
+  color: var(--process-white);
+}
+
+.btn-process-outline {
+  background: transparent;
+  color: var(--process-royal-blue);
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: 2px solid var(--process-royal-blue);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-process-outline:hover {
+  background: var(--process-royal-blue);
+  color: var(--process-white);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(65, 105, 225, 0.2);
+}
+
+/* ==========================================================================
+   1. HERO BANNER
+   ========================================================================== */
+.process-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .process-hero {
+    height: 50vh;
+  }
+}
+
+.process-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.4) 0%, rgba(84, 7, 136, 0.95) 100%);
+  z-index: 1;
+}
+
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+.process-hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  animation: slowZoom 20s linear infinite alternate;
+  z-index: 0;
+}
+
+.process-hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--process-white);
+  width: 100%;
+  padding-top: 160px;
+}
+
+.process-hero-content h1 {
+  color: var(--process-white);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   2. PROCESS OVERVIEW
+   ========================================================================== */
+.process-img-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.process-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.process-img-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   3. THE LUXURY JOURNEY (TIMELINE)
+   ========================================================================== */
+.timeline-section {
+  background-color: var(--process-light-lavender);
+  padding: 100px 0;
+  position: relative;
+}
+
+.process-timeline-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Horizontal line for desktop */
+.process-timeline-line {
+  position: absolute;
+  top: 40px; /* Align with dots */
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background: rgba(65, 105, 225, 0.2);
+  z-index: 1;
+}
+
+.process-timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--process-royal-blue), var(--process-royal-purple));
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+.process-steps-wrapper {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+  align-items: stretch;
+}
+
+.process-step-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.process-step-dot {
+  width: 24px;
+  height: 24px;
+  background: var(--process-white);
+  border: 4px solid var(--process-royal-blue);
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 3;
+}
+
+.process-step-item:hover .process-step-dot,
+.process-step-item.active .process-step-dot {
+  background: var(--process-royal-purple);
+  border-color: var(--process-white);
+  box-shadow: 0 0 15px rgba(84, 7, 136, 0.6);
+  transform: scale(1.3);
+}
+
+.process-step-content {
+  background: var(--process-white);
+  border-radius: 20px;
+  padding: 30px 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  opacity: 0.7;
+  transform: translateY(10px);
+  border: 2px solid transparent;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.process-step-item:hover .process-step-content,
+.process-step-item.active .process-step-content {
+  opacity: 1;
+  transform: translateY(0);
+  border-color: var(--process-royal-blue);
+  box-shadow: 0 20px 40px rgba(65, 105, 225, 0.15);
+}
+
+.step-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(65, 105, 225, 0.1), rgba(84, 7, 136, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  transition: transform 0.4s ease;
+}
+
+.process-step-item:hover .step-icon-wrapper,
+.process-step-item.active .step-icon-wrapper {
+  transform: rotate(10deg) scale(1.1);
+  background: linear-gradient(135deg, var(--process-royal-blue), var(--process-royal-purple));
+  color: var(--process-white) !important;
+}
+
+.process-step-item:hover .step-icon-wrapper svg,
+.process-step-item.active .step-icon-wrapper svg {
+  color: var(--process-white) !important;
+}
+
+/* Mobile Vertical Timeline */
+@media (max-width: 991px) {
+  .process-timeline-line {
+    top: 0;
+    bottom: 0;
+    left: 30px;
+    width: 4px;
+    height: 100%;
+    right: auto;
+  }
+  
+  .process-timeline-progress {
+    width: 100%;
+    height: 0%;
+    transition: height 0.5s ease;
+  }
+  
+  .process-steps-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .process-step-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .process-step-dot {
+    margin: 30px 20px 0 0;
+    flex-shrink: 0;
+  }
+  
+  .process-step-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .step-icon-wrapper {
+    margin: 0 0 20px 0;
+  }
+}
+
+/* ==========================================================================
+   4. MATERIAL SELECTION EXPERIENCE
+   ========================================================================== */
+.material-exp-card {
+  background: var(--process-white);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  height: 100%;
+}
+
+.material-exp-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(65, 105, 225, 0.15);
+  border-color: var(--process-royal-blue);
+}
+
+/* ==========================================================================
+   5. QUALITY PROMISE
+   ========================================================================== */
+.quality-promise-section {
+  background-color: var(--process-soft-gray);
+  padding: 80px 0;
+}
+
+.quality-card {
+  background: var(--process-white);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.quality-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(65, 105, 225, 0.15);
+}
+
+.quality-card:hover svg {
+  color: var(--process-royal-purple) !important;
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   6. BEFORE & AFTER JOURNEY
+   ========================================================================== */
+.before-after-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  aspect-ratio: 16/9;
+}
+
+.before-img, .after-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.before-img {
+  z-index: 1;
+}
+
+.after-img {
+  z-index: 2;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: var(--process-white);
+  z-index: 3;
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: var(--process-royal-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--process-white);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.slider-label {
+  position: absolute;
+  top: 20px;
+  padding: 8px 15px;
+  background: rgba(0,0,0,0.6);
+  color: var(--process-white);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 4;
+}
+
+.label-before { left: 20px; }
+.label-after { right: 20px; }
+
+/* ==========================================================================
+   7. FAQ
+   ========================================================================== */
+.faq-accordion .accordion-item {
+  border: none;
+  margin-bottom: 15px;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.faq-accordion .accordion-button {
+  font-weight: 600;
+  padding: 20px;
+  color: var(--process-dark);
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+  background-color: var(--process-light-lavender);
+  color: var(--process-royal-blue);
+  box-shadow: none;
+}
+
+.faq-accordion .accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0,0,0,.125);
+}
+
+/* ==========================================================================
+   8. PREMIUM CTA
+   ========================================================================== */
+.cta-process {
+  position: relative;
+  padding: 100px 0;
+  background-image: url('https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&w=1600&q=80');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-process-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(65, 105, 225, 0.9), rgba(84, 7, 136, 0.9));
+  z-index: 1;
+}
+
+.cta-process-content {
+  position: relative;
+  z-index: 2;
+  color: var(--process-white);
+}
+
+.cta-process-content h2 {
+  color: var(--process-white);
+}

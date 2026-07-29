@@ -191,13 +191,20 @@ const Navbar = () => {
                         <p className="mb-0 text-muted small text-capitalize">Luxury furniture style quiz.</p>
                       </div>
                     </a>
-                    <a href="/experience/budget" className="mega-menu-item text-decoration-none d-flex align-items-start" onClick={(e) => handleNavigate(e, '/experience/budget')}>
+                    {/* <a href="/experience/budget" className="mega-menu-item text-decoration-none d-flex align-items-start" onClick={(e) => handleNavigate(e, '/experience/budget')}>
                       <div className="mega-icon me-3 mt-1"><FaCalculator /></div>
                       <div>
                         <h6 className="mb-1 fw-bold text-dark">Budget Estimator</h6>
                         <p className="mb-0 text-muted small text-capitalize">Estimate project cost.</p>
                       </div>
-                    </a>
+                    </a> */}
+                    {/* <a href="/experience/center" className="mega-menu-item text-decoration-none d-flex align-items-start" onClick={(e) => handleNavigate(e, '/experience/center')}>
+                      <div className="mega-icon me-3 mt-1"><FaBuilding /></div>
+                      <div>
+                        <h6 className="mb-1 fw-bold text-dark">Experience Center</h6>
+                        <p className="mb-0 text-muted small text-capitalize">Visit our luxury showroom.</p>
+                      </div>
+                    </a> */}
                   </div>
                 </div>
               </li>
@@ -213,7 +220,7 @@ const Navbar = () => {
                 </span>
                 <div className={`dropdown-menu mega-menu position-absolute border-0 shadow-lg rounded-3 p-3 ${dropdownOpen === 'cta' ? 'show' : ''}`} style={{top: '100%', left: '-50px', width: '250px'}}>
                   <div className="d-flex flex-column gap-2">
-                    <a href="/book/center" className="mega-menu-item text-decoration-none d-flex align-items-center p-2 rounded" onClick={(e) => handleNavigate(e, '/book/center')}>
+                    <a href="/experience/center" className="mega-menu-item text-decoration-none d-flex align-items-center p-2 rounded" onClick={(e) => handleNavigate(e, '/experience/center')}>
                       <FaBuilding className="me-3 text-warning" />
                       <span className="fw-bold text-dark">Experience Center</span>
                     </a>
@@ -293,6 +300,7 @@ const Navbar = () => {
                   <ul className="list-unstyled ps-4 pb-3 m-0 d-flex flex-column gap-3">
                     <li><a href="/experience/style" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/experience/style')}>Style Discovery</a></li>
                     <li><a href="/experience/budget" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/experience/budget')}>Budget Estimator</a></li>
+                    <li><a href="/experience/center" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/experience/center')}>Experience Center</a></li>
                   </ul>
                 </div>
               </li>
@@ -308,7 +316,7 @@ const Navbar = () => {
                 </div>
                 <div className={`mobile-submenu ${expandedMenu === 'cta' ? 'expanded' : ''}`}>
                   <ul className="list-unstyled ps-4 pb-3 m-0 d-flex flex-column gap-3">
-                    <li><a href="/book/center" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/book/center')}>Experience Center</a></li>
+                    <li><a href="/experience/center" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/experience/center')}>Experience Center</a></li>
                     <li><a href="/book/visit" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/book/visit')}>Home Site Visit</a></li>
                   </ul>
                 </div>

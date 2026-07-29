@@ -1,0 +1,395 @@
+/* ==========================================================================
+   ABOUT US PAGE STYLES
+   ========================================================================== */
+
+:root {
+  --about-royal-blue: #4169E1;
+  --about-purple: #540788;
+  --about-dark: #111111;
+  --about-light-lavender: #f7f5fb;
+  --about-white: #ffffff;
+}
+
+/* Base text */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ==========================================================================
+   1. HERO BANNER
+   ========================================================================== */
+.about-hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 160px;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(65, 105, 225, 0.7) 0%, rgba(84, 7, 136, 0.8) 100%);
+  z-index: 1;
+}
+
+.about-hero-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 60px 50px;
+  max-width: 900px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  margin-top: 100px;
+}
+
+.about-hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 25px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--about-white);
+}
+
+.btn-about-outline {
+  border: 2px solid var(--about-white);
+  color: var(--about-white);
+  background: transparent;
+  padding: 15px 40px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-about-outline:hover {
+  background: var(--about-white);
+  color: var(--about-dark);
+}
+
+.btn-about-solid {
+  background: var(--about-royal-blue);
+  color: var(--about-white);
+  padding: 15px 40px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-about-solid:hover {
+  background: var(--about-purple);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(84, 7, 136, 0.3);
+}
+
+/* ==========================================================================
+   2. OUR STORY & 3. HERITAGE & 4. FOUNDER
+   ========================================================================== */
+.about-img-zoom {
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.about-img-zoom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-img-zoom:hover img {
+  transform: scale(1.1);
+}
+
+.highlight-quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--about-royal-blue);
+  border-left: 4px solid var(--about-purple);
+  padding-left: 20px;
+  margin: 30px 0;
+}
+
+.founder-quote-mark {
+  font-size: 4rem;
+  color: var(--about-royal-blue);
+  opacity: 0.2;
+  line-height: 0;
+  position: absolute;
+  top: 20px;
+  left: -10px;
+}
+
+.founder-content {
+  position: relative;
+  padding-left: 30px;
+}
+
+/* ==========================================================================
+   5. MISSION, VISION, VALUES
+   ========================================================================== */
+.mvv-card {
+  background: var(--about-white);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  height: 100%;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.mvv-card:hover {
+  transform: translateY(-10px);
+  background: var(--about-royal-blue);
+  box-shadow: 0 20px 40px rgba(65, 105, 225, 0.3);
+  border-color: transparent;
+}
+
+.mvv-card:hover h3,
+.mvv-card:hover p {
+  color: var(--about-white) !important;
+}
+
+.mvv-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: var(--about-light-lavender);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.4s ease;
+}
+
+.mvv-card:hover .mvv-icon-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.mvv-card:hover .mvv-icon-wrapper svg {
+  color: var(--about-white) !important;
+}
+
+/* ==========================================================================
+   6. THE GYP DIFFERENCE
+   ========================================================================== */
+.diff-card {
+  background: var(--about-white);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+  height: 100%;
+  border: 2px solid transparent;
+}
+
+.diff-card:hover {
+  background: linear-gradient(135deg, var(--about-royal-blue), var(--about-purple));
+  color: var(--about-white);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(84, 7, 136, 0.25);
+  border-color: transparent;
+}
+
+.diff-card:hover h5 {
+  color: var(--about-white);
+}
+
+.diff-card:hover svg {
+  color: var(--about-white) !important;
+  transform: scale(1.2) rotate(5deg);
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   7. LOCAL EXPERTISE
+   ========================================================================== */
+.expertise-card {
+  background: var(--about-white);
+  border-radius: 20px;
+  padding: 50px 30px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(65, 105, 225, 0.1);
+  transition: all 0.4s ease;
+}
+
+.expertise-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(65, 105, 225, 0.2);
+  border: 1px solid rgba(65, 105, 225, 0.2);
+}
+
+/* ==========================================================================
+   8. TIMELINE
+   ========================================================================== */
+.timeline-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--about-light-lavender);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.timeline-points {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-point {
+  text-align: center;
+  width: 150px;
+}
+
+.timeline-circle {
+  width: 24px;
+  height: 24px;
+  background: var(--about-white);
+  border: 4px solid var(--about-royal-blue);
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.timeline-point:hover .timeline-circle {
+  transform: scale(1.5);
+  background: var(--about-purple);
+  border-color: var(--about-purple);
+}
+
+.timeline-year {
+  font-weight: 800;
+  color: var(--about-royal-blue);
+  font-size: 1.2rem;
+}
+
+.timeline-title {
+  font-weight: 600;
+  color: var(--about-dark);
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    top: 0;
+    left: 20px;
+    width: 4px;
+    height: 100%;
+    transform: none;
+  }
+  .timeline-points {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .timeline-point {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+  }
+  .timeline-circle {
+    margin: 0 30px 0 10px;
+  }
+}
+
+/* ==========================================================================
+   9. MANUFACTURING EXCELLENCE
+   ========================================================================== */
+.mfg-feature-card {
+  background: var(--about-white);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.mfg-feature-card:hover {
+  transform: translateX(10px);
+  border-left: 4px solid var(--about-royal-blue);
+}
+
+/* ==========================================================================
+   10. STATISTICS
+   ========================================================================== */
+.stats-section {
+  background: var(--about-dark);
+  color: var(--about-white);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 30px;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--about-royal-blue);
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #aaaaaa;
+}
+
+/* ==========================================================================
+   11. CTA
+   ========================================================================== */
+.cta-section {
+  position: relative;
+  background: linear-gradient(135deg, var(--about-purple), var(--about-royal-blue));
+  color: var(--about-white);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.cta-bg-img {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}

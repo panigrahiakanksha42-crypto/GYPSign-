@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaShieldHalved, FaInstagram, FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight, FaPaintbrush, FaHandsHoldingCircle } from 'react-icons/fa6';
 import { FaCrown, FaCouch, FaGem, FaMapMarkedAlt, FaClock, FaHeart, FaHandshake, FaMoneyBillWave, FaHeadset } from 'react-icons/fa';
@@ -51,9 +52,13 @@ const testimonials = [
 ];
 
 const Home = () => {
-  const [showGatekeeper, setShowGatekeeper] = useState(true);
+  const [showGatekeeper, setShowGatekeeper] = useState(() => {
+    return sessionStorage.getItem('gatekeeperAcknowledged') !== 'true';
+  });
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [showLearnMoreModal, setShowLearnMoreModal] = useState(false);
+  const navigate = useNavigate();
 
   // Hero Slider
   useEffect(() => {
@@ -136,7 +141,10 @@ const Home = () => {
                 </div>
                 <button 
                   className="btn w-100 py-3 rounded-3 text-uppercase fw-bold shadow-sm gatekeeper-btn" 
-                  onClick={() => setShowGatekeeper(false)}
+                  onClick={() => {
+                    sessionStorage.setItem('gatekeeperAcknowledged', 'true');
+                    setShowGatekeeper(false);
+                  }}
                   style={{letterSpacing: '1.5px', transition: 'all 0.3s ease', backgroundColor: 'var(--royal-blue)', color: 'var(--text-white)', border: 'none'}}
                   onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--accent-purple)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                   onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--royal-blue)'; e.currentTarget.style.transform = 'translateY(0)'; }}
@@ -148,8 +156,67 @@ const Home = () => {
           )}
           </AnimatePresence>
 
+          {/* LEARN MORE MODAL */}
+          <AnimatePresence>
+          {showLearnMoreModal && (
+            <motion.div 
+              className="learn-more-modal position-fixed w-100 h-100 top-0 start-0 d-flex justify-content-center align-items-center p-3"
+              style={{ zIndex: 1060 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <div className="custom-modal-backdrop position-absolute w-100 h-100" style={{background: 'rgba(15, 10, 30, 0.85)', backdropFilter: 'blur(12px)', zIndex: 1}} onClick={() => setShowLearnMoreModal(false)}></div>
+              <motion.div 
+                className="custom-modal-content p-4 p-md-5 rounded-4 shadow-lg position-relative w-100" 
+                style={{
+                  maxWidth: '800px', 
+                  maxHeight: '90vh', 
+                  overflowY: 'auto', 
+                  background: 'rgba(255, 255, 255, 0.95)', 
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  zIndex: 2
+                }}
+                initial={{ scale: 0.95, y: 30, opacity: 0 }}
+                animate={{ scale: 1, y: 0, opacity: 1 }}
+                exit={{ scale: 0.95, y: 30, opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              >
+                <button 
+                  className="btn-close position-absolute top-0 end-0 m-4 rounded-circle bg-light shadow-sm p-2" 
+                  style={{zIndex: 10, opacity: 1}}
+                  onClick={() => setShowLearnMoreModal(false)}
+                ></button>
+                
+                <div className="row g-4 align-items-center">
+                  <div className="col-md-5">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Bespoke Process" className="img-fluid rounded-4 shadow" style={{objectFit: 'cover', height: '100%', minHeight: '350px'}} />
+                  </div>
+                  <div className="col-md-7 px-md-4">
+                    <h3 className="display-6 fw-bold mb-3" style={{fontFamily: 'Playfair Display, serif', color: 'var(--primary-purple)'}}>Our Legacy of Craftsmanship</h3>
+                    <div style={{width: '60px', height: '4px', backgroundColor: 'var(--royal-blue)', marginBottom: '1.5rem'}}></div>
+                    
+                    <p className="text-muted mb-3" style={{fontSize: '1.05rem', lineHeight: '1.7'}}>
+                      GYP Signatures was founded on the belief that luxury furniture should be as unique as the individuals who own it. For decades, our master artisans have pushed the boundaries of design, utilizing traditional woodworking techniques infused with modern aesthetics.
+                    </p>
+                    <p className="text-muted mb-4" style={{fontSize: '1.05rem', lineHeight: '1.7'}}>
+                      We source the finest materials globally—from rich Italian leathers to solid Burmese teak. Our comprehensive process ensures that every piece leaving our atelier is a masterpiece of uncompromising quality, comfort, and durability.
+                    </p>
+                    
+                    <ul className="list-unstyled mb-0">
+                      <li className="mb-2 d-flex align-items-center"><FaGem className="me-3 text-primary" /> <strong>Uncompromising Material Selection</strong></li>
+                      <li className="mb-2 d-flex align-items-center"><FaHandsHoldingCircle className="me-3 text-primary" /> <strong>Masterful Handcraftsmanship</strong></li>
+                      <li className="mb-2 d-flex align-items-center"><FaMapMarkedAlt className="me-3 text-primary" /> <strong>Global Inspiration, Local Expertise</strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+          </AnimatePresence>
+
           {/* 1. HERO BANNER */}
-          <section className="hero-section d-flex align-items-center text-white position-relative overflow-hidden gradient-purple-blue" style={{minHeight: '100vh', paddingTop: '170px'}}>
+          <section className="hero-section d-flex align-items-center text-white position-relative overflow-hidden gradient-purple-blue" style={{minHeight: '105vh', paddingTop: '220px'}}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -167,7 +234,7 @@ const Home = () => {
             </AnimatePresence>
             <div className="hero-overlay position-absolute w-100 h-100 top-0 start-0" style={{background: 'linear-gradient(to right, rgba(39,2,73,0.85) 0%, rgba(65,105,225,0.4) 100%)'}}></div>
             
-            <div className="container position-relative z-1 d-flex flex-column justify-content-center h-100 hero-content-container" style={{ paddingBottom: '120px' }}>
+            <div className="container position-relative z-1 d-flex flex-column justify-content-center h-100 hero-content-container" style={{ paddingBottom: '180px' }}>
               <div className="row">
                 <div className="col-12 col-lg-8">
                   <motion.div 
@@ -272,7 +339,11 @@ const Home = () => {
                   <p className="text-muted mb-5" style={{fontSize: '1.1rem', lineHeight: '1.8'}}>
                     Every sofa, dining table, and accent piece is meticulously crafted using premium materials, merging timeless aesthetics with modern comfort to elevate your everyday living.
                   </p>
-                  <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-sm" style={{backgroundColor: 'var(--royal-blue)', color: 'var(--text-white)', letterSpacing: '1px'}}>
+                  <button 
+                    className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-sm" 
+                    style={{backgroundColor: 'var(--royal-blue)', color: 'var(--text-white)', letterSpacing: '1px'}}
+                    onClick={() => setShowLearnMoreModal(true)}
+                  >
                     Learn More <span className="ms-2">→</span>
                   </button>
                 </motion.div>
@@ -418,7 +489,11 @@ const Home = () => {
                     </p>
                   </div>
                   
-                  <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold btn-outline-dark" style={{letterSpacing: '1px'}}>
+                  <button 
+                    className="btn rounded-pill px-5 py-3 text-uppercase fw-bold btn-outline-dark" 
+                    style={{letterSpacing: '1px'}}
+                    onClick={() => navigate('/brand/heritage')}
+                  >
                     Our Heritage <span className="ms-2">→</span>
                   </button>
                 </motion.div>
@@ -430,23 +505,43 @@ const Home = () => {
           <section className="py-5 bg-white">
             <div className="container py-5">
               <motion.div 
-                className="bg-white rounded-5 p-5 text-center shadow-sm max-w-4xl mx-auto"
-                style={{maxWidth: '800px', margin: '0 auto'}}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                className="rounded-5 p-5 text-center shadow-lg position-relative overflow-hidden"
+                style={{
+                  maxWidth: '850px', 
+                  margin: '0 auto',
+                  background: 'linear-gradient(135deg, var(--royal-blue) 0%, var(--primary-purple) 100%)',
+                  border: '1px solid rgba(255,255,255,0.15)',
+                  color: '#fff'
+                }}
+                initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(103, 58, 183, 0.3)' }}
+                transition={{ duration: 0.6, type: 'spring' }}
               >
-                <div className="d-inline-flex align-items-center justify-content-center rounded-circle mb-4" style={{width: '80px', height: '80px', backgroundColor: 'rgba(65, 105, 225, 0.1)'}}>
-                  <FaMapMarkedAlt size={36} color="var(--royal-blue)" />
+                {/* Decorative background elements */}
+                <div className="position-absolute rounded-circle" style={{width: '300px', height: '300px', background: 'rgba(255,255,255,0.05)', top: '-100px', right: '-100px', blur: '20px'}}></div>
+                <div className="position-absolute rounded-circle" style={{width: '200px', height: '200px', background: 'rgba(255,255,255,0.05)', bottom: '-50px', left: '-50px', blur: '20px'}}></div>
+
+                <div className="position-relative z-1">
+                  <div className="d-inline-flex align-items-center justify-content-center rounded-circle mb-4 shadow" style={{width: '90px', height: '90px', backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.3)'}}>
+                    <FaMapMarkedAlt size={40} color="#fff" />
+                  </div>
+                  <h2 className="display-5 fw-bold mb-4" style={{fontFamily: 'Playfair Display, serif', textShadow: '0 2px 10px rgba(0,0,0,0.2)'}}>Local Expertise</h2>
+                  <div style={{width: '60px', height: '3px', backgroundColor: 'rgba(255,255,255,0.5)', margin: '0 auto 2rem auto'}}></div>
+                  <p className="lead mb-5 px-md-4" style={{lineHeight: '1.8', opacity: 0.9, fontWeight: 300, fontSize: '1.15rem'}}>
+                    Deeply rooted in Srikalahasti, we understand local architecture and premium interior design requirements better than anyone else. We bring global luxury standards directly to your neighborhood.
+                  </p>
+                  <button 
+                    className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-lg" 
+                    style={{backgroundColor: '#fff', color: 'var(--primary-purple)', letterSpacing: '1.5px', transition: 'all 0.3s ease'}}
+                    onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.backgroundColor = '#f8f9fa'; }}
+                    onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.backgroundColor = '#fff'; }}
+                    onClick={() => navigate('/experience/center')}
+                  >
+                    Visit Experience Center <span className="ms-2">→</span>
+                  </button>
                 </div>
-                <h2 className="display-5 fw-bold mb-4" style={{fontFamily: 'Playfair Display, serif', color: '#111'}}>Local Expertise</h2>
-                <p className="lead text-muted mb-5" style={{lineHeight: '1.7'}}>
-                  Deeply rooted in Srikalahasti, we understand local architecture and premium interior design requirements better than anyone else. We bring global luxury standards to your neighborhood.
-                </p>
-                <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold text-white shadow" style={{backgroundColor: '#111', letterSpacing: '1px'}}>
-                  Visit Experience Center
-                </button>
               </motion.div>
             </div>
           </section>
@@ -466,8 +561,13 @@ const Home = () => {
                   Book a private consultation with our experts and take the first step towards your luxurious new living space.
                 </p>
                 <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                  <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-sm" style={{backgroundColor: 'var(--royal-blue)', color: 'var(--text-white)', letterSpacing: '1px', transition: 'all 0.3s'}}>Book Consultation</button>
-                  <button className="btn btn-outline-primary rounded-pill px-5 py-3 text-uppercase fw-bold" style={{letterSpacing: '1px', transition: 'all 0.3s', borderColor: 'var(--royal-blue)', color: 'var(--royal-blue)'}} onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--royal-blue)'; e.currentTarget.style.color = '#fff'; }} onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--royal-blue)'; }}>Take Style Quiz</button>
+                  <button 
+                    className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-sm" 
+                    style={{backgroundColor: 'var(--royal-blue)', color: 'var(--text-white)', letterSpacing: '1px', transition: 'all 0.3s'}}
+                    onClick={() => navigate('/experience/center')}
+                  >
+                    Book Consultation
+                  </button>
                 </div>
               </motion.div>
             </div>

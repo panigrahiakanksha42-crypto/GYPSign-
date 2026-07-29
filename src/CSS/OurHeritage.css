@@ -1,0 +1,444 @@
+/* ==========================================================================
+   OUR HERITAGE PAGE STYLES
+   ========================================================================== */
+
+:root {
+  --heritage-royal-blue: #4169E1;
+  --heritage-royal-purple: #540788;
+  --heritage-light-lavender: #F5F2FF;
+  --heritage-white: #FFFFFF;
+  --heritage-dark: #111111;
+  --heritage-text: #5F6B7A;
+}
+
+.heritage-page {
+  font-family: 'Inter', sans-serif;
+  color: var(--heritage-text);
+  background-color: var(--heritage-white);
+  overflow-x: hidden;
+}
+
+.heritage-page h1, 
+.heritage-page h2, 
+.heritage-page h3, 
+.heritage-page h4, 
+.heritage-page h5 {
+  color: var(--heritage-dark);
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn-heritage-solid {
+  background: var(--heritage-royal-blue);
+  color: var(--heritage-white);
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(65, 105, 225, 0.2);
+}
+
+.btn-heritage-solid:hover {
+  background: var(--heritage-royal-purple);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(84, 7, 136, 0.3);
+  color: var(--heritage-white);
+}
+
+.btn-heritage-outline {
+  background: transparent;
+  color: var(--heritage-white);
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: 2px solid var(--heritage-white);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.btn-heritage-outline:hover {
+  background: var(--heritage-white);
+  color: var(--heritage-dark);
+  transform: translateY(-3px);
+}
+
+.btn-heritage-outline-dark {
+  background: transparent;
+  color: var(--heritage-royal-blue);
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: 2px solid var(--heritage-royal-blue);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.btn-heritage-outline-dark:hover {
+  background: var(--heritage-royal-blue);
+  color: var(--heritage-white);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   1. HERO BANNER
+   ========================================================================== */
+.heritage-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.heritage-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.3) 0%, rgba(60, 4, 103, 0.95) 100%);
+  z-index: 1;
+}
+
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+.heritage-hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1610505466046-dcb222b94c34?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  animation: slowZoom 20s linear infinite alternate;
+  z-index: 0;
+}
+
+.heritage-hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--heritage-white);
+  width: 100%;
+  padding-top: 80px;
+}
+
+.heritage-hero-content h1 {
+  color: var(--heritage-white);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   2. THE BEGINNING & 3. GAYU'S JOURNEY
+   ========================================================================== */
+.heritage-img-zoom {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.heritage-img-zoom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.heritage-img-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   4. HERITAGE TIMELINE
+   ========================================================================== */
+.heritage-timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.heritage-timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--heritage-royal-blue), var(--heritage-royal-purple));
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.heritage-timeline-points {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.heritage-timeline-point {
+  text-align: center;
+  background: var(--heritage-white);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  width: 18%;
+  cursor: pointer;
+  position: relative;
+}
+
+.heritage-timeline-point:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(65, 105, 225, 0.15);
+}
+
+.heritage-timeline-circle {
+  width: 20px;
+  height: 20px;
+  background: var(--heritage-royal-blue);
+  border: 4px solid var(--heritage-white);
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+.heritage-timeline-point:hover .heritage-timeline-circle {
+  transform: translateX(-50%) scale(1.5);
+  background: var(--heritage-royal-purple);
+}
+
+.heritage-timeline-year {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--heritage-royal-blue);
+  margin-top: 15px;
+}
+
+.heritage-timeline-title {
+  font-size: 1rem;
+  color: var(--heritage-dark);
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .heritage-timeline-line {
+    top: 0;
+    bottom: 0;
+    left: 30px;
+    width: 4px;
+    height: 100%;
+    right: auto;
+    transform: none;
+  }
+  
+  .heritage-timeline-points {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding-left: 60px;
+  }
+  
+  .heritage-timeline-point {
+    width: 100%;
+    text-align: left;
+    padding: 25px;
+  }
+  
+  .heritage-timeline-circle {
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+  }
+  
+  .heritage-timeline-point:hover .heritage-timeline-circle {
+    transform: translateY(-50%) scale(1.5);
+  }
+}
+
+/* ==========================================================================
+   5. MILESTONES & ACHIEVEMENTS
+   ========================================================================== */
+.achievements-section {
+  background: linear-gradient(135deg, var(--heritage-royal-blue), #2b459c);
+  color: var(--heritage-white);
+  padding: 80px 0;
+}
+
+.achievements-section h2 {
+  color: var(--heritage-white);
+}
+
+.achievement-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 100%;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255,255,255,0.1);
+}
+
+.achievement-card svg {
+  transition: transform 0.4s ease;
+}
+
+.achievement-card:hover svg {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* ==========================================================================
+   6. MEET THE VISIONARY
+   ========================================================================== */
+.visionary-quote {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  font-style: italic;
+  color: var(--heritage-royal-blue);
+  position: relative;
+  padding-left: 40px;
+  margin: 30px 0;
+}
+
+.visionary-quote::before {
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: var(--heritage-royal-purple);
+  opacity: 0.2;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   7. MANUFACTURING EXCELLENCE
+   ========================================================================== */
+.mfg-card {
+  background: var(--heritage-white);
+  border-radius: 15px;
+  padding: 25px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.mfg-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(65, 105, 225, 0.15);
+  background: var(--heritage-royal-blue);
+  color: var(--heritage-white);
+}
+
+.mfg-card:hover svg {
+  color: var(--heritage-white) !important;
+}
+
+/* ==========================================================================
+   8. COMPANY STATISTICS
+   ========================================================================== */
+.stats-section-dark {
+  background-color: var(--heritage-dark);
+  color: var(--heritage-white);
+  padding: 80px 0;
+}
+
+.stat-item-dark {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  transition: all 0.4s ease;
+}
+
+.stat-item-dark:hover {
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 0 30px rgba(65, 105, 225, 0.3);
+  transform: translateY(-8px);
+}
+
+.stat-number-dark {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(90deg, var(--heritage-royal-blue), #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   9. OUR PROMISE
+   ========================================================================== */
+.promise-card {
+  background: var(--heritage-light-lavender);
+  border-radius: 20px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.promise-card:hover {
+  transform: translateY(-10px);
+  background: var(--heritage-white);
+  box-shadow: 0 20px 40px rgba(65, 105, 225, 0.15);
+}
+
+.promise-card:hover svg {
+  color: var(--heritage-royal-purple) !important;
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   10. CTA SECTION
+   ========================================================================== */
+.cta-parallax {
+  position: relative;
+  padding: 100px 0;
+  background-image: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=1600&q=80');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-parallax-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(65, 105, 225, 0.9), rgba(84, 7, 136, 0.9));
+  z-index: 1;
+}
+
+.cta-parallax-content {
+  position: relative;
+  z-index: 2;
+  color: var(--heritage-white);
+}
+
+.cta-parallax-content h2 {
+  color: var(--heritage-white);
+}

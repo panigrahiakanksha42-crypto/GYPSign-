@@ -4,7 +4,7 @@
 
 /* 1. Hero Banner */
 .showcase-hero {
-  min-height: 85vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -12,11 +12,122 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  overflow: hidden;
 }
+
+.sc-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(39, 2, 73, 0.4) 0%, rgba(65, 105, 225, 0.5) 100%);
+  z-index: 0;
+}
+
+.sc-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  animation: scFloat 10s infinite alternate ease-in-out;
+}
+.sc-orb.orb-1 {
+  width: 400px; height: 400px;
+  background: rgba(84, 7, 136, 0.6);
+  top: -100px; left: -100px;
+}
+.sc-orb.orb-2 {
+  width: 300px; height: 300px;
+  background: rgba(65, 105, 225, 0.6);
+  bottom: -50px; right: 10%;
+  animation-delay: -5s;
+}
+
+@keyframes scFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, 50px) scale(1.1); }
+}
+
+.sc-hero-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 60px 40px;
+  max-width: 1000px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.sc-hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.sc-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.sc-hero-desc {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+.btn-sc-premium {
+  position: relative;
+  background: linear-gradient(135deg, var(--royal-blue) 0%, #540788 100%);
+  color: white;
+  border: none;
+  padding: 16px 45px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn-sc-premium::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  transition: all 0.7s ease;
+}
+
+.btn-sc-premium:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(65, 105, 225, 0.4);
+}
+
+.btn-sc-premium:hover::before {
+  left: 150%;
+}
+
 @media (max-width: 768px) {
   .showcase-hero {
-    min-height: 65vh;
-    padding-top: 80px;
+    min-height: 80vh;
+    padding-top: 120px;
+  }
+  .sc-hero-title {
+    font-size: 2.5rem;
   }
 }
 
@@ -329,9 +440,21 @@
   text-align: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.02);
   border: 1px solid #f0f0f0;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 .feature-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--royal-blue);
+  transform: translateY(-10px);
+  border-color: rgba(65, 105, 225, 0.4);
+  box-shadow: 0 15px 35px rgba(65, 105, 225, 0.15);
+  background: linear-gradient(145deg, #ffffff, #f5f7ff);
+}
+
+.feature-card svg {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feature-card:hover svg {
+  transform: scale(1.2) translateY(-5px);
+  filter: drop-shadow(0 5px 10px rgba(65, 105, 225, 0.4));
 }

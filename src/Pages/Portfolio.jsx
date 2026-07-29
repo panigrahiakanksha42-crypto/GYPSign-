@@ -58,45 +58,57 @@ const Portfolio = () => {
     <div className="portfolio-page bg-light" style={{paddingTop: '80px'}}>
       
       {/* 1. HERO BANNER */}
-      <section className="portfolio-hero" style={{backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=80')"}}>
-        <div className="container text-center text-white position-relative z-1">
-          <motion.h4 
-            className="text-uppercase letter-spacing-2 mb-3" 
-            style={{color: 'var(--royal-blue)'}}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            Project Portfolio
-          </motion.h4>
-          <motion.h1 
-            className="display-3 fw-bold mb-4" 
-            style={{fontFamily: 'Playfair Display, serif'}}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Discover our completed luxury <br className="d-none d-md-block"/>interiors and handcrafted projects.
-          </motion.h1>
-          <motion.p 
-            className="lead mb-5 mx-auto" 
-            style={{maxWidth: '600px', color: '#ddd'}}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Every project reflects our commitment to quality, creativity, and timeless luxury.
-          </motion.p>
-          <motion.button 
-            className="btn btn-gold rounded-pill px-5 py-3 fw-bold text-uppercase"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            onClick={() => document.getElementById('portfolio-overview').scrollIntoView({ behavior: 'smooth' })}
-          >
-            Explore Projects
-          </motion.button>
-        </div>
+      <section className="portfolio-hero" style={{backgroundImage: "linear-gradient(135deg, rgba(39, 2, 73, 0.6) 0%, rgba(65, 105, 225, 0.7) 100%), url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=80')"}}>
+        <div className="hero-orb orb-1"></div>
+        <div className="hero-orb orb-2"></div>
+        
+        <motion.div 
+          className="container d-flex justify-content-center text-white position-relative z-1"
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <div className="portfolio-glass-content text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              <span className="portfolio-hero-badge">Exclusive Projects</span>
+            </motion.div>
+            
+            <motion.h1 
+              className="portfolio-hero-title" 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              Discover <span className="gradient-text">Luxury</span> Interiors
+            </motion.h1>
+            
+            <motion.p 
+              className="portfolio-hero-desc"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+            >
+              Explore our curated portfolio of completed projects. Every space reflects our commitment to exceptional craftsmanship, elegant design, and timeless luxury.
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.8 }}
+            >
+              <button className="portfolio-hero-btn" onClick={() => {
+                document.getElementById('projects-grid').scrollIntoView({ behavior: 'smooth' });
+              }}>
+                <span>Explore Projects</span>
+                <FaArrowRight className="ms-3" />
+              </button>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
 
       {/* 2. PORTFOLIO OVERVIEW */}

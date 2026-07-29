@@ -76,42 +76,44 @@ const Productshowcase = () => {
     <div className="product-showcase-page bg-light" style={{paddingTop: '80px'}}>
       
       {/* 1. HERO BANNER */}
-      <section className="showcase-hero" style={{backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80')"}}>
-        <div className="container text-center text-white position-relative z-1">
-          <motion.h4 
-            className="text-uppercase letter-spacing-2 mb-3" 
-            style={{color: 'var(--royal-blue)'}}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+      <section className="showcase-hero" style={{backgroundImage: "url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80')"}}>
+        <div className="sc-hero-overlay"></div>
+        
+        {/* Animated Background Orbs */}
+        <div className="sc-orb orb-1"></div>
+        <div className="sc-orb orb-2"></div>
+        
+        <div className="container d-flex justify-content-center position-relative z-1">
+          <motion.div 
+            className="sc-hero-content text-center text-white"
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
-            Product Showcase
-          </motion.h4>
-          <motion.h1 
-            className="display-4 fw-bold mb-4" 
-            style={{fontFamily: 'Playfair Display, serif'}}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Discover handcrafted furniture designed <br className="d-none d-md-block"/>to elevate every living space.
-          </motion.h1>
-          <motion.button 
-            className="btn btn-gold rounded-pill px-5 py-3 fw-bold text-uppercase mt-3"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            onClick={() => {
-              document.getElementById('product-grid').scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Explore Collection
-          </motion.button>
+            <div className="sc-hero-badge">
+              <span>THE SIGNATURE COLLECTION</span>
+            </div>
+            
+            <h1 className="sc-hero-title">
+              Discover handcrafted furniture designed <br className="d-none d-md-block"/>to elevate every living space.
+            </h1>
+            
+            <p className="sc-hero-desc">
+              Explore our curated gallery of premium designs, luxury materials, and timeless aesthetics.
+            </p>
+            
+            <button 
+              className="btn-sc-premium"
+              onClick={() => document.getElementById('filters').scrollIntoView({ behavior: 'smooth' })}
+            >
+              <span>Explore Collection</span>
+            </button>
+          </motion.div>
         </div>
       </section>
 
-      {/* 2. CATEGORY NAVIGATION */}
-      <section className="py-4 bg-white border-bottom shadow-sm position-sticky" style={{top: '80px', zIndex: 1020}}>
+      {/* 2. CATEGORY FILTERS */}
+      <section id="filters" className="py-5 bg-white border-bottom shadow-sm sticky-top" style={{top: '76px', zIndex: 1000}}>
         <div className="container">
           <div className="category-tabs-container d-flex justify-content-lg-center">
             {categories.map((cat, idx) => (
