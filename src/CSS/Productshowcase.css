@@ -47,12 +47,12 @@
 }
 
 .category-tab:hover {
-  color: #C8A03A;
+  color: var(--royal-blue);
 }
 
 .category-tab.active {
   color: #ffffff;
-  background-color: #C8A03A;
+  background-color: var(--royal-blue);
   border-radius: 30px;
   font-weight: bold;
 }
@@ -65,7 +65,7 @@
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background-color: #C8A03A;
+  background-color: var(--royal-blue);
   transition: width 0.3s ease;
 }
 .category-tab:not(.active):hover::after {
@@ -150,7 +150,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #C8A03A;
+  color: var(--royal-blue);
   font-size: 1.2rem;
   z-index: 4;
   opacity: 0;
@@ -210,7 +210,7 @@
   z-index: 10000;
   transition: color 0.3s ease;
 }
-.lightbox-close:hover { color: #C8A03A; }
+.lightbox-close:hover { color: var(--royal-blue); }
 
 .lightbox-nav {
   position: absolute;
@@ -232,7 +232,7 @@
 }
 
 .lightbox-nav:hover {
-  background: #C8A03A;
+  background: var(--royal-blue);
   color: #fff;
 }
 
@@ -295,29 +295,29 @@
   transition: all 0.3s ease;
 }
 .close-modal-btn:hover {
-  background: #C8A03A;
+  background: var(--royal-blue);
   color: #fff;
 }
 
 /* Buttons */
 .btn-gold {
-  background-color: #C8A03A;
+  background-color: var(--royal-blue);
   color: #fff;
   transition: all 0.3s ease;
 }
 .btn-gold:hover {
-  background-color: #b58d31;
+  background-color: var(--accent-purple);
   color: #fff;
   transform: translateY(-2px);
 }
 .btn-gold-outline {
-  border: 1px solid #C8A03A;
-  color: #C8A03A;
+  border: 1px solid var(--royal-blue);
+  color: var(--royal-blue);
   background: transparent;
   transition: all 0.3s ease;
 }
 .btn-gold-outline:hover {
-  background-color: #C8A03A;
+  background-color: var(--royal-blue);
   color: #fff;
 }
 
@@ -333,5 +333,5 @@
 }
 .feature-card:hover {
   transform: translateY(-5px);
-  border-color: #C8A03A;
+  border-color: var(--royal-blue);
 }

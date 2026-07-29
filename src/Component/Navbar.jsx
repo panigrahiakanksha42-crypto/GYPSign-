@@ -62,7 +62,7 @@ const Navbar = () => {
       <div className={`page-transition-overlay ${isTransitioning ? 'active' : ''}`}>
         <div className="transition-content text-center">
           <h1 className="display-4 fw-bold mb-2 text-white" style={{fontFamily: 'Playfair Display, serif'}}>
-            GYP <span style={{fontWeight: 300, color: '#C8A03A'}}>Signatures</span>
+            GYP <span style={{fontWeight: 300, color: 'var(--royal-blue)'}}>Signatures</span>
           </h1>
           <div className="transition-loader mt-4 mx-auto"></div>
         </div>
@@ -72,12 +72,12 @@ const Navbar = () => {
         {/* BANNER STAYS THE SAME, BUT HIDES ON SCROLL OR KEEPS TOP */}
         <div className={`top-banners-wrapper ${scrolled ? 'd-none' : 'd-block'}`}>
           {showBanner && (
-            <div className="festive-banner bg-dark py-2 position-relative" style={{color: '#d4af37'}}>
+            <div className="festive-banner bg-dark py-2 position-relative" style={{color: 'var(--light-blue)'}}>
               <div className="container d-flex justify-content-center align-items-center text-center px-4 position-relative">
                 <p className="m-0 small fw-bold d-flex align-items-center">
                   <FaGift className="me-2" /> 
                   Festive Sale: Get up to 20% off on premium furniture collections! 
-                  <span className="ms-2 badge text-dark text-uppercase rounded-1" style={{backgroundColor: '#d4af37', fontSize: '0.65rem', padding: '0.35em 0.65em'}}>Limited Time Offer</span>
+                  <span className="ms-2 badge text-dark text-uppercase rounded-1" style={{backgroundColor: 'var(--royal-blue)', color: 'white', fontSize: '0.65rem', padding: '0.35em 0.65em'}}>Limited Time Offer</span>
                 </p>
                 <button className="btn btn-link position-absolute end-0 p-0 text-decoration-none" onClick={() => setShowBanner(false)} style={{right: '15px', color: '#aaa', transition: 'color 0.2s'}} onMouseOver={(e) => e.currentTarget.style.color = '#fff'} onMouseOut={(e) => e.currentTarget.style.color = '#aaa'}>
                   <FaTimes size={16} />
@@ -86,12 +86,12 @@ const Navbar = () => {
             </div>
           )}
 
-          <div className="contact-marquee-banner py-2" style={{backgroundColor: '#C8A03A', overflow: 'hidden', whiteSpace: 'nowrap'}}>
+          <div className="contact-marquee-banner py-2" style={{backgroundColor: 'var(--primary-purple)', overflow: 'hidden', whiteSpace: 'nowrap'}}>
             <div className="marquee-content-scrolling d-inline-block fw-bold text-uppercase" style={{color: '#111', fontSize: '0.85rem', letterSpacing: '1px'}}>
-              <span className="me-5">For website contact, reach us at: <a href="mailto:info.prasadtech@gmail.com" className="text-dark text-decoration-underline" style={{textUnderlineOffset: '3px'}}>info.prasadtech@gmail.com</a></span>
-              <span className="me-5">For website contact, reach us at: <a href="mailto:info.prasadtech@gmail.com" className="text-dark text-decoration-underline" style={{textUnderlineOffset: '3px'}}>info.prasadtech@gmail.com</a></span>
-              <span className="me-5">For website contact, reach us at: <a href="mailto:info.prasadtech@gmail.com" className="text-dark text-decoration-underline" style={{textUnderlineOffset: '3px'}}>info.prasadtech@gmail.com</a></span>
-              <span className="me-5">For website contact, reach us at: <a href="mailto:info.prasadtech@gmail.com" className="text-dark text-decoration-underline" style={{textUnderlineOffset: '3px'}}>info.prasadtech@gmail.com</a></span>
+              <span className="me-5 text-white">For website contact, reach us at: <a href="mailto:info.prasadtech@gmail.com" className="text-white text-decoration-underline" style={{textUnderlineOffset: '3px'}}>info.prasadtech@gmail.com</a></span>
+              <span className="me-5 text-white">For website contact, reach us at: <a href="mailto:info.prasadtech@gmail.com" className="text-white text-decoration-underline" style={{textUnderlineOffset: '3px'}}>info.prasadtech@gmail.com</a></span>
+              <span className="me-5 text-white">For website contact, reach us at: <a href="mailto:info.prasadtech@gmail.com" className="text-white text-decoration-underline" style={{textUnderlineOffset: '3px'}}>info.prasadtech@gmail.com</a></span>
+              <span className="me-5 text-white">For website contact, reach us at: <a href="mailto:info.prasadtech@gmail.com" className="text-white text-decoration-underline" style={{textUnderlineOffset: '3px'}}>info.prasadtech@gmail.com</a></span>
             </div>
           </div>
         </div>
@@ -241,7 +241,7 @@ const Navbar = () => {
           
           <div className="mobile-menu-header d-flex justify-content-between align-items-center p-4">
             <h2 className="m-0 fw-bold text-white" style={{fontFamily: 'Playfair Display, serif'}}>
-              GYP <span style={{fontWeight: 300, color: '#C8A03A'}}>Signatures</span>
+              GYP <span style={{fontWeight: 300, color: 'var(--royal-blue)'}}>Signatures</span>
             </h2>
             <button className="btn btn-link p-0 close-btn" onClick={closeNav}>
               <FaTimes size={28}/>
@@ -303,8 +303,8 @@ const Navbar = () => {
 
               <li className="mobile-nav-item border-top border-secondary border-opacity-25 pb-4">
                 <div className="d-flex justify-content-between align-items-center w-100 py-3 cursor-pointer" onClick={() => toggleMobileMenu('cta')}>
-                  <span className="text-uppercase letter-spacing-1 fw-bold" style={{color: '#C8A03A'}}>BOOK NOW</span>
-                  <span className="accordion-icon" style={{color: '#C8A03A'}}>{expandedMenu === 'cta' ? <FaMinus /> : <FaPlus />}</span>
+                  <span className="text-uppercase letter-spacing-1 fw-bold" style={{color: 'var(--royal-blue)'}}>BOOK NOW</span>
+                  <span className="accordion-icon" style={{color: 'var(--royal-blue)'}}>{expandedMenu === 'cta' ? <FaMinus /> : <FaPlus />}</span>
                 </div>
                 <div className={`mobile-submenu ${expandedMenu === 'cta' ? 'expanded' : ''}`}>
                   <ul className="list-unstyled ps-4 pb-3 m-0 d-flex flex-column gap-3">

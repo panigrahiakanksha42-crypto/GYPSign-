@@ -17,7 +17,7 @@
 
 /* Scrolled state with solid background */
 .main-header.scrolled {
-  background-color: rgba(17, 17, 17, 0.75);
+  background-color: rgba(13, 13, 13, 0.85); /* #0D0D0D */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -54,8 +54,12 @@
   white-space: nowrap;
 }
 
-.nav-link-item:hover, .nav-link-item.active {
-  color: #C8A03A !important;
+.nav-link-item:hover {
+  color: var(--highlight-purple) !important;
+}
+
+.nav-link-item.active {
+  color: var(--royal-blue) !important;
 }
 
 /* Gold Underline Animation */
@@ -66,11 +70,16 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #C8A03A;
+  background-color: var(--royal-blue);
   transition: width 0.3s ease-in-out;
 }
 
-.nav-link-item:hover::after, .nav-link-item.active::after {
+.nav-link-item:hover::after {
+  width: 100%;
+  background-color: var(--highlight-purple);
+}
+
+.nav-link-item.active::after {
   width: 100%;
 }
 
@@ -113,7 +122,7 @@
 
 .mega-icon {
   font-size: 1.4rem;
-  color: #C8A03A;
+  color: var(--royal-blue);
 }
 
 .mega-menu-item h6 {
@@ -121,24 +130,24 @@
 }
 
 .mega-menu-item:hover h6 {
-  color: #C8A03A !important;
+  color: var(--royal-blue) !important;
 }
 
 /* CTA BUTTON */
 .cta-btn {
-  background-color: #C8A03A !important;
-  color: #111111 !important;
+  background-color: var(--royal-blue) !important;
+  color: var(--text-white) !important;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  border: 1px solid #C8A03A;
+  border: 1px solid var(--royal-blue);
   transition: all 0.3s ease;
 }
 
 .cta-btn:hover {
-  background-color: #111111 !important;
-  color: #C8A03A !important;
-  border-color: #C8A03A !important;
+  background-color: var(--accent-purple) !important;
+  color: var(--text-white) !important;
+  border-color: var(--accent-purple) !important;
 }
 
 /* ==========================================================================
@@ -191,7 +200,7 @@
 }
 
 .close-btn {
-  color: #C8A03A;
+  color: var(--royal-blue);
   transition: transform 0.3s ease;
 }
 .close-btn:hover {
@@ -211,11 +220,11 @@
 }
 
 .mobile-nav-item a.active, .mobile-nav-item a:hover {
-  color: #C8A03A !important;
+  color: var(--royal-blue) !important;
 }
 
 .accordion-icon {
-  color: #C8A03A;
+  color: var(--royal-blue);
   font-size: 0.9rem;
 }
 
@@ -230,7 +239,7 @@
 }
 
 .mobile-submenu a:hover {
-  color: #C8A03A !important;
+  color: var(--highlight-purple) !important;
   opacity: 1 !important;
 }
 
@@ -239,7 +248,7 @@
 }
 
 .social-link:hover {
-  color: #C8A03A !important;
+  color: var(--highlight-purple) !important;
   transform: translateY(-3px);
 }
 
@@ -270,8 +279,8 @@
 .transition-loader {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(200, 160, 58, 0.3);
-  border-top-color: #C8A03A;
+  border: 3px solid rgba(65, 105, 225, 0.3);
+  border-top-color: var(--royal-blue);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }

@@ -11,7 +11,8 @@
 
 /* 1. Hero Buttons */
 .btn-cta-primary:hover {
-  background-color: #f3e5ab !important;
+  background-color: var(--accent-purple) !important;
+  color: var(--text-white) !important;
   transform: translateY(-2px);
 }
 
@@ -87,9 +88,9 @@
 
 /* Testimonial slider button hover */
 .rounded-circle.bg-light:hover {
-  background-color: #C8A03A !important;
+  background-color: var(--royal-blue) !important;
   color: #fff !important;
-  border-color: #C8A03A !important;
+  border-color: var(--royal-blue) !important;
   transition: all 0.3s ease;
 }
 .rounded-circle.bg-light:hover svg {
@@ -108,7 +109,7 @@
   transition: all 0.4s ease;
 }
 .gyp-difference-card:hover .icon-wrapper {
-  background-color: #C8A03A !important;
+  background-color: var(--royal-blue) !important;
   transform: scale(1.1);
 }
 .gyp-difference-card .card-icon {
@@ -126,10 +127,10 @@
 .why-choose-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.08) !important;
-  border-color: #C8A03A !important;
+  border-color: var(--royal-blue) !important;
 }
 .why-choose-card:hover .icon-container {
-  background-color: #C8A03A !important;
+  background-color: var(--royal-blue) !important;
   transform: scale(1.1);
 }
 .why-choose-card:hover .why-icon {

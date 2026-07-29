@@ -6,9 +6,39 @@
   padding: 0;
 }
 
-html, body {
+body {
   overflow-x: hidden;
-  width: 100%;
+}
+
+:root {
+  --primary-purple: #3C0467;
+  --secondary-purple: #270249;
+  --accent-purple: #540788;
+  --light-purple: #7313AA;
+  --highlight-purple: #902BD2;
+  --royal-blue: #4169E1;
+  --deep-blue: #1F3FAF;
+  --light-blue: #5A7DFF;
+  --bg-dark: #0D0D0D;
+  --bg-section: #171717;
+  --text-white: #FFFFFF;
+  --text-gray: #EAEAEA;
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, var(--secondary-purple) 0%, var(--primary-purple) 40%, var(--accent-purple) 70%, var(--light-purple) 100%);
+}
+
+.gradient-purple-blue {
+  background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple), var(--royal-blue));
+}
+
+.gradient-luxury-dark {
+  background: linear-gradient(180deg, var(--bg-dark), var(--secondary-purple), var(--primary-purple));
+}
+
+.premium-shadow {
+  box-shadow: 0 15px 40px rgba(65, 105, 225, 0.25);
 }
 
 @theme inline {

@@ -62,7 +62,7 @@ const Portfolio = () => {
         <div className="container text-center text-white position-relative z-1">
           <motion.h4 
             className="text-uppercase letter-spacing-2 mb-3" 
-            style={{color: '#C8A03A'}}
+            style={{color: 'var(--royal-blue)'}}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -118,7 +118,7 @@ const Portfolio = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <h5 className="text-uppercase mb-2" style={{color: '#C8A03A', letterSpacing: '1px'}}>About Our Portfolio</h5>
+              <h5 className="text-uppercase mb-2" style={{color: 'var(--royal-blue)', letterSpacing: '1px'}}>About Our Portfolio</h5>
               <h2 className="display-5 fw-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>Creating Elegant Spaces That Inspire</h2>
               <p className="text-muted mb-5" style={{lineHeight: '1.7', fontSize: '1.1rem'}}>
                 For over a decade, we have transformed empty rooms into luxurious living spaces. Our portfolio spans high-end residential villas, modern apartments, and premium commercial establishments.
@@ -126,19 +126,19 @@ const Portfolio = () => {
               
               <div className="row g-4 mb-5">
                 <div className="col-6 col-md-3">
-                  <h3 className="fw-bold m-0" style={{color: '#C8A03A'}}><AnimatedCounter from={0} to={250} duration={2} suffix="+" /></h3>
+                  <h3 className="fw-bold m-0" style={{color: 'var(--royal-blue)'}}><AnimatedCounter from={0} to={250} duration={2} suffix="+" /></h3>
                   <span className="small text-muted fw-bold text-uppercase">Completed Projects</span>
                 </div>
                 <div className="col-6 col-md-3">
-                  <h3 className="fw-bold m-0" style={{color: '#C8A03A'}}><AnimatedCounter from={0} to={100} duration={2} suffix="%" /></h3>
+                  <h3 className="fw-bold m-0" style={{color: 'var(--royal-blue)'}}><AnimatedCounter from={0} to={100} duration={2} suffix="%" /></h3>
                   <span className="small text-muted fw-bold text-uppercase">Client Satisfaction</span>
                 </div>
                 <div className="col-6 col-md-3">
-                  <h3 className="fw-bold m-0" style={{color: '#C8A03A'}}><AnimatedCounter from={0} to={12} duration={2} suffix="+" /></h3>
+                  <h3 className="fw-bold m-0" style={{color: 'var(--royal-blue)'}}><AnimatedCounter from={0} to={12} duration={2} suffix="+" /></h3>
                   <span className="small text-muted fw-bold text-uppercase">Years Experience</span>
                 </div>
                 <div className="col-6 col-md-3">
-                  <h3 className="fw-bold m-0" style={{color: '#C8A03A'}}>100%</h3>
+                  <h3 className="fw-bold m-0" style={{color: 'var(--royal-blue)'}}>100%</h3>
                   <span className="small text-muted fw-bold text-uppercase">Premium Materials</span>
                 </div>
               </div>
@@ -152,11 +152,11 @@ const Portfolio = () => {
       </section>
 
       {/* 3. PROJECT CATEGORIES */}
-      <section className="py-5" style={{backgroundColor: '#F8F5EE'}}>
+      <section className="py-5" style={{backgroundColor: '#EAEAEA'}}>
         <div className="container py-5">
           <div className="text-center mb-5">
             <h2 className="display-6 fw-bold" style={{fontFamily: 'Playfair Display, serif'}}>Project Categories</h2>
-            <div style={{width: '60px', height: '3px', backgroundColor: '#C8A03A', margin: '20px auto 0'}}></div>
+            <div style={{width: '60px', height: '3px', backgroundColor: 'var(--royal-blue)', margin: '20px auto 0'}}></div>
           </div>
           
           <div className="row g-4">
@@ -179,7 +179,7 @@ const Portfolio = () => {
                     <h4 className="fw-bold mb-1">{cat.name}</h4>
                     <div className="d-flex justify-content-between align-items-center">
                       <span className="small text-light opacity-75">{cat.count} Projects</span>
-                      <span className="text-gold fw-bold d-flex align-items-center gap-1" style={{color: '#C8A03A'}}>Explore <FaArrowRight size={12}/></span>
+                      <span className="text-gold fw-bold d-flex align-items-center gap-1" style={{color: 'var(--royal-blue)'}}>Explore <FaArrowRight size={12}/></span>
                     </div>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ const Portfolio = () => {
               <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80" alt="Featured Project" className="w-100 h-100" style={{objectFit: 'cover', minHeight: '400px'}} />
             </div>
             <div className="col-lg-5 p-4 p-md-5 d-flex flex-column justify-content-center bg-white">
-              <span className="text-uppercase mb-2 fw-bold" style={{color: '#C8A03A', letterSpacing: '1px'}}>Featured Project</span>
+              <span className="text-uppercase mb-2 fw-bold" style={{color: 'var(--royal-blue)', letterSpacing: '1px'}}>Featured Project</span>
               <h2 className="fw-bold mb-2" style={{fontFamily: 'Playfair Display, serif'}}>Luxury Villa Interior</h2>
               <p className="text-muted mb-4"><FaHome className="me-2"/>Srikalahasti, Andhra Pradesh</p>
               
@@ -226,7 +226,7 @@ const Portfolio = () => {
       </section>
 
       {/* 5. COMPLETED PROJECTS GALLERY */}
-      <section id="project-gallery" className="py-5" style={{backgroundColor: '#F8F5EE'}}>
+      <section id="project-gallery" className="py-5" style={{backgroundColor: '#EAEAEA'}}>
         <div className="container py-5">
           <div className="text-center mb-5">
             <h2 className="display-6 fw-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>Completed Projects Gallery</h2>
@@ -263,7 +263,7 @@ const Portfolio = () => {
                     </div>
                     
                     <div className="p-4 flex-grow-1 d-flex flex-column">
-                      <span className="small text-uppercase mb-1" style={{color: '#C8A03A', letterSpacing: '1px'}}>{project.category}</span>
+                      <span className="small text-uppercase mb-1" style={{color: 'var(--royal-blue)', letterSpacing: '1px'}}>{project.category}</span>
                       <h5 className="fw-bold mb-1">{project.title}</h5>
                       <p className="text-muted small mb-0"><FaHome className="me-1 opacity-50"/> {project.location} • {project.status}</p>
                     </div>
@@ -285,7 +285,7 @@ const Portfolio = () => {
       {/* 6. BEFORE & AFTER TRANSFORMATION */}
       <section className="py-5 bg-white">
         <div className="container py-5 text-center">
-          <span className="text-uppercase mb-2 fw-bold d-block" style={{color: '#C8A03A', letterSpacing: '1px'}}>Transformation Stories</span>
+          <span className="text-uppercase mb-2 fw-bold d-block" style={{color: 'var(--royal-blue)', letterSpacing: '1px'}}>Transformation Stories</span>
           <h2 className="display-6 fw-bold mb-3" style={{fontFamily: 'Playfair Display, serif'}}>Before & After</h2>
           <p className="text-muted mb-5 mx-auto" style={{maxWidth: '600px'}}>
             See how ordinary spaces become extraordinary with our bespoke furniture and interior solutions. Drag the slider to compare.
@@ -329,7 +329,7 @@ const Portfolio = () => {
       </section>
 
       {/* 7. OUR DESIGN PROCESS */}
-      <section className="py-5" style={{backgroundColor: '#F8F5EE'}}>
+      <section className="py-5" style={{backgroundColor: '#EAEAEA'}}>
         <div className="container py-5">
           <div className="text-center mb-5">
             <h2 className="display-6 fw-bold mb-5" style={{fontFamily: 'Playfair Display, serif'}}>Our Design Process</h2>
@@ -369,7 +369,7 @@ const Portfolio = () => {
       <section className="py-5 bg-white border-top">
         <div className="container py-5">
           <div className="text-center mb-5">
-            <span className="text-uppercase mb-2 fw-bold d-block" style={{color: '#C8A03A', letterSpacing: '1px'}}>Testimonials</span>
+            <span className="text-uppercase mb-2 fw-bold d-block" style={{color: 'var(--royal-blue)', letterSpacing: '1px'}}>Testimonials</span>
             <h2 className="display-6 fw-bold" style={{fontFamily: 'Playfair Display, serif'}}>What Our Clients Say</h2>
           </div>
           
@@ -394,7 +394,7 @@ const Portfolio = () => {
       </section>
 
       {/* 9. CTA SECTION */}
-      <section className="py-5 position-relative" style={{backgroundImage: "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80')", backgroundSize: 'cover', backgroundAttachment: 'fixed'}}>
+      <section className="py-5 position-relative gradient-hero">
         <div className="container py-5 text-center text-white position-relative z-1">
           <h2 className="display-4 fw-bold mb-3" style={{fontFamily: 'Playfair Display, serif'}}>Let's Design Something Extraordinary</h2>
           <p className="lead mb-5 mx-auto" style={{maxWidth: '700px', color: '#ccc'}}>

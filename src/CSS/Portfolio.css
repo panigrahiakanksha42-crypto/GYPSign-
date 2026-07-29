@@ -198,7 +198,7 @@
   transform: translate(-50%, -50%);
   width: 40px;
   height: 40px;
-  background: #C8A03A;
+  background: var(--royal-blue);
   border: 3px solid #fff;
   border-radius: 50%;
   display: flex;
@@ -287,20 +287,20 @@
   width: 80px;
   height: 80px;
   background: #fff;
-  border: 2px solid #C8A03A;
+  border: 2px solid var(--royal-blue);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  color: #C8A03A;
+  color: var(--royal-blue);
   font-size: 1.5rem;
-  box-shadow: 0 10px 20px rgba(200, 160, 58, 0.15);
+  box-shadow: 0 10px 20px rgba(65, 105, 225, 0.15);
   transition: all 0.3s ease;
 }
 
 .process-step:hover .process-icon-wrapper {
-  background: #C8A03A;
+  background: var(--royal-blue);
   color: #fff;
   transform: scale(1.1);
 }

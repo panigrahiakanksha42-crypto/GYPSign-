@@ -123,23 +123,23 @@ const Home = () => {
                 exit={{ scale: 0.9, y: 20 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
               >
-                <div className="position-absolute top-0 start-0 w-100" style={{height: '4px', background: 'linear-gradient(90deg, #C8A03A, #f3e5ab, #C8A03A)'}}></div>
+                <div className="position-absolute top-0 start-0 w-100" style={{height: '4px', background: 'linear-gradient(90deg, var(--primary-purple), var(--highlight-purple), var(--primary-purple))'}}></div>
                 <div className="gatekeeper-header mb-4 mt-2">
                   <div className="d-inline-flex justify-content-center align-items-center rounded-circle mb-3" style={{width: '80px', height: '80px', background: 'rgba(200, 160, 58, 0.1)'}}>
-                    <FaShieldHalved size={36} style={{color: '#C8A03A'}} />
+                    <FaShieldHalved size={36} style={{color: 'var(--royal-blue)'}} />
                   </div>
                   <h2 className="fw-bold text-white mb-2" style={{fontFamily: 'Playfair Display, serif', letterSpacing: '1px'}}>Development Disclosure</h2>
                 </div>
                 <div className="gatekeeper-body text-light mb-5 px-sm-3" style={{opacity: 0.85, fontSize: '1.05rem', lineHeight: '1.6'}}>
-                  <p className="mb-3">This is a <strong style={{color: '#C8A03A'}}>technical demonstration</strong> website and <strong>NOT</strong> the official portal.</p>
+                  <p className="mb-3">This is a <strong style={{color: 'var(--royal-blue)'}}>technical demonstration</strong> website and <strong>NOT</strong> the official portal.</p>
                   <p className="mb-0">All content and features are presented for display and portfolio purposes only.</p>
                 </div>
                 <button 
                   className="btn w-100 py-3 rounded-3 text-uppercase fw-bold shadow-sm gatekeeper-btn" 
                   onClick={() => setShowGatekeeper(false)}
-                  style={{letterSpacing: '1.5px', transition: 'all 0.3s ease', backgroundColor: '#C8A03A', color: '#111', border: 'none'}}
-                  onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#f3e5ab'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                  onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#C8A03A'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                  style={{letterSpacing: '1.5px', transition: 'all 0.3s ease', backgroundColor: 'var(--royal-blue)', color: 'var(--text-white)', border: 'none'}}
+                  onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--accent-purple)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                  onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--royal-blue)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
                   Acknowledge & Proceed
                 </button>
@@ -149,7 +149,7 @@ const Home = () => {
           </AnimatePresence>
 
           {/* 1. HERO BANNER */}
-          <section className="hero-section d-flex align-items-center text-white position-relative overflow-hidden" style={{minHeight: '100vh', backgroundColor: '#111', paddingTop: '170px'}}>
+          <section className="hero-section d-flex align-items-center text-white position-relative overflow-hidden gradient-purple-blue" style={{minHeight: '100vh', paddingTop: '170px'}}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -165,7 +165,7 @@ const Home = () => {
                 }}
               />
             </AnimatePresence>
-            <div className="hero-overlay position-absolute w-100 h-100 top-0 start-0" style={{background: 'linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%)'}}></div>
+            <div className="hero-overlay position-absolute w-100 h-100 top-0 start-0" style={{background: 'linear-gradient(to right, rgba(39,2,73,0.85) 0%, rgba(65,105,225,0.4) 100%)'}}></div>
             
             <div className="container position-relative z-1 d-flex flex-column justify-content-center h-100 hero-content-container" style={{ paddingBottom: '120px' }}>
               <div className="row">
@@ -176,8 +176,8 @@ const Home = () => {
                     transition={{ delay: 0.3, duration: 0.8 }}
                     className="d-flex align-items-center mb-4"
                   >
-                    <div style={{width: '40px', height: '2px', backgroundColor: '#C8A03A'}} className="me-3"></div>
-                    <span className="text-uppercase fw-bold letter-spacing-2" style={{color: '#C8A03A', fontSize: '0.85rem'}}>Srikalahasti's Bespoke Atelier</span>
+                    <div style={{width: '40px', height: '2px', backgroundColor: 'var(--text-white)'}} className="me-3"></div>
+                    <span className="text-uppercase fw-bold letter-spacing-2" style={{color: 'var(--text-white)', fontSize: '0.85rem'}}>Srikalahasti's Bespoke Atelier</span>
                   </motion.div>
                   
                   <motion.h1 
@@ -187,7 +187,7 @@ const Home = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
                   >
-                    Exquisite Custom<br />Furniture For Your<br /><span style={{color: '#C8A03A', fontStyle: 'italic', fontWeight: '400'}}>Dream Home & Art</span>
+                    Exquisite Custom<br />Furniture For Your<br /><span style={{color: 'var(--text-white)', fontStyle: 'italic', fontWeight: '400'}}>Dream Home & Art</span>
                   </motion.h1>
                   
                   <motion.p 
@@ -206,7 +206,7 @@ const Home = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1, duration: 0.5 }}
                   >
-                    <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-sm d-flex align-items-center justify-content-center btn-cta-primary w-sm-100" style={{backgroundColor: '#C8A03A', color: '#111', letterSpacing: '1px', transition: 'all 0.3s'}}>
+                    <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-sm d-flex align-items-center justify-content-center btn-cta-primary w-sm-100" style={{backgroundColor: 'var(--royal-blue)', color: 'var(--text-white)', letterSpacing: '1px', transition: 'all 0.3s'}}>
                       Explore Showcase
                     </button>
                     <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold text-white d-flex align-items-center justify-content-center w-sm-100" style={{border: '1px solid rgba(255,255,255,0.5)', backgroundColor: 'rgba(0,0,0,0.3)', backdropFilter: 'blur(4px)', letterSpacing: '1px', transition: 'all 0.3s'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.borderColor = '#fff';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.3)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)';}}>
@@ -229,15 +229,15 @@ const Home = () => {
                 <div className="row text-center py-3">
                   <div className="col-4 border-end border-secondary border-opacity-50 px-1 px-md-3">
                     <h4 className="text-white mb-0 fw-bold stat-number"><AnimatedCounter from={0} to={500} duration={2} suffix="+" /></h4>
-                    <span className="small text-uppercase letter-spacing-1 stat-label" style={{color: '#C8A03A', fontSize: '0.7rem'}}>Families</span>
+                    <span className="small text-uppercase letter-spacing-1 stat-label" style={{color: 'var(--royal-blue)', fontSize: '0.7rem'}}>Families</span>
                   </div>
                   <div className="col-4 border-end border-secondary border-opacity-50 px-1 px-md-3">
                     <h4 className="text-white mb-0 fw-bold stat-number"><AnimatedCounter from={0} to={2} duration={2} suffix="+" /></h4>
-                    <span className="small text-uppercase letter-spacing-1 stat-label" style={{color: '#C8A03A', fontSize: '0.7rem'}}>Years</span>
+                    <span className="small text-uppercase letter-spacing-1 stat-label" style={{color: 'var(--royal-blue)', fontSize: '0.7rem'}}>Years</span>
                   </div>
                   <div className="col-4 px-1 px-md-3">
                     <h4 className="text-white mb-0 fw-bold stat-number"><AnimatedCounter from={0} to={100} duration={2} suffix="%" /></h4>
-                    <span className="small text-uppercase letter-spacing-1 stat-label" style={{color: '#C8A03A', fontSize: '0.7rem'}}>Customization</span>
+                    <span className="small text-uppercase letter-spacing-1 stat-label" style={{color: 'var(--royal-blue)', fontSize: '0.7rem'}}>Customization</span>
                   </div>
                 </div>
               </div>
@@ -272,7 +272,7 @@ const Home = () => {
                   <p className="text-muted mb-5" style={{fontSize: '1.1rem', lineHeight: '1.8'}}>
                     Every sofa, dining table, and accent piece is meticulously crafted using premium materials, merging timeless aesthetics with modern comfort to elevate your everyday living.
                   </p>
-                  <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-sm" style={{backgroundColor: '#C8A03A', color: '#111', letterSpacing: '1px'}}>
+                  <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-sm" style={{backgroundColor: 'var(--royal-blue)', color: 'var(--text-white)', letterSpacing: '1px'}}>
                     Learn More <span className="ms-2">→</span>
                   </button>
                 </motion.div>
@@ -281,7 +281,7 @@ const Home = () => {
           </section>
 
           {/* 3. COMPANY STATISTICS */}
-          <section className="py-5" style={{backgroundColor: '#111111'}}>
+          <section className="py-5" style={{backgroundColor: 'var(--bg-section)'}}>
             <div className="container py-5">
               <div className="row g-4 text-center">
                 {[
@@ -298,8 +298,8 @@ const Home = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                   >
-                    <div className="stat-card p-4 rounded-4" style={{border: '1px solid rgba(200, 160, 58, 0.2)', backgroundColor: 'rgba(255,255,255,0.02)'}}>
-                      <h2 className="display-4 fw-bold mb-2" style={{color: '#C8A03A', fontFamily: 'Playfair Display, serif'}}>
+                    <div className="stat-card p-4 rounded-4" style={{border: '1px solid rgba(65, 105, 225, 0.2)', backgroundColor: 'rgba(255,255,255,0.02)'}}>
+                      <h2 className="display-4 fw-bold mb-2" style={{color: 'var(--royal-blue)', fontFamily: 'Playfair Display, serif'}}>
                         <AnimatedCounter from={0} to={stat.value} duration={2.5} suffix={stat.suffix} />
                       </h2>
                       <p className="text-uppercase letter-spacing-1 mb-0 text-light" style={{fontSize: '0.85rem'}}>{stat.label}</p>
@@ -311,12 +311,12 @@ const Home = () => {
           </section>
 
           {/* 4. THE GYP DIFFERENCE */}
-          <section className="py-5" style={{backgroundColor: '#f1f0eb'}}>
+          <section className="py-5 bg-white">
             <div className="container py-5 my-md-4">
               <div className="text-center mb-5 pb-3">
-                <span className="text-uppercase fw-bold letter-spacing-2" style={{color: '#C8A03A', fontSize: '0.9rem'}}>The GYP Difference</span>
+                <span className="text-uppercase fw-bold letter-spacing-2" style={{color: 'var(--royal-blue)', fontSize: '0.9rem'}}>The GYP Difference</span>
                 <h2 className="display-4 fw-bold mt-3" style={{fontFamily: 'Playfair Display, serif', color: '#111'}}>Why Choose GYP Signatures?</h2>
-                <div style={{width: '60px', height: '3px', backgroundColor: '#C8A03A', margin: '20px auto 0'}}></div>
+                <div style={{width: '60px', height: '3px', backgroundColor: 'var(--royal-blue)', margin: '20px auto 0'}}></div>
               </div>
 
               <div className="row g-4 justify-content-center">
@@ -335,8 +335,8 @@ const Home = () => {
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                   >
                     <div className="d-flex p-4 rounded-4 bg-white shadow-sm h-100 flex-column flex-sm-row text-center text-sm-start align-items-center align-items-sm-start gyp-difference-card">
-                      <div className="flex-shrink-0 mb-3 mb-sm-0 me-sm-4 rounded-circle d-flex align-items-center justify-content-center icon-wrapper" style={{width: '70px', height: '70px', backgroundColor: 'rgba(200, 160, 58, 0.1)'}}>
-                        <feature.icon size={30} color="#C8A03A" className="card-icon" />
+                      <div className="flex-shrink-0 mb-3 mb-sm-0 me-sm-4 rounded-circle d-flex align-items-center justify-content-center icon-wrapper" style={{width: '70px', height: '70px', backgroundColor: 'rgba(65, 105, 225, 0.1)'}}>
+                        <feature.icon size={30} color="var(--royal-blue)" className="card-icon" />
                       </div>
                       <div>
                         <h4 className="fw-bold mb-2" style={{fontFamily: 'Playfair Display, serif', color: '#111'}}>{feature.title}</h4>
@@ -374,8 +374,8 @@ const Home = () => {
                     transition={{ duration: 0.4, delay: idx * 0.1 }}
                   >
                     <div className="p-4 text-center border rounded-4 h-100 why-choose-card" style={{borderColor: '#eee', transition: 'all 0.3s ease'}}>
-                      <div className="icon-container mb-3 d-inline-flex justify-content-center align-items-center rounded-circle" style={{width: '70px', height: '70px', backgroundColor: 'rgba(200, 160, 58, 0.05)', transition: 'all 0.3s ease'}}>
-                        <item.icon size={30} color="#C8A03A" className="why-icon" style={{transition: 'all 0.3s ease'}} />
+                      <div className="icon-container mb-3 d-inline-flex justify-content-center align-items-center rounded-circle" style={{width: '70px', height: '70px', backgroundColor: 'rgba(65, 105, 225, 0.05)', transition: 'all 0.3s ease'}}>
+                        <item.icon size={30} color="var(--royal-blue)" className="why-icon" style={{transition: 'all 0.3s ease'}} />
                       </div>
                       <h5 className="fw-bold mb-3" style={{color: '#111'}}>{item.title}</h5>
                       <p className="text-muted mb-0 small" style={{lineHeight: '1.6'}}>{item.desc}</p>
@@ -409,10 +409,10 @@ const Home = () => {
                 >
                   <h2 className="fw-bold mb-4 display-4" style={{fontFamily: 'Playfair Display, serif', color: '#111'}}>The Visionary</h2>
                   <h4 className="mb-4 fw-bold" style={{color: '#111'}}>Gayathri Posey</h4>
-                  <h6 className="mb-5 text-uppercase letter-spacing-1" style={{color: '#C8A03A'}}>FOUNDER & CEO</h6>
+                  <h6 className="mb-5 text-uppercase letter-spacing-1" style={{color: 'var(--royal-blue)'}}>FOUNDER & CEO</h6>
                   
                   <div className="position-relative p-4 p-md-5 mb-5 rounded-4 bg-light">
-                    <FaQuoteLeft className="position-absolute top-0 start-0 translate-middle text-white bg-warning rounded-circle p-2" size={40} style={{backgroundColor: '#C8A03A'}} />
+                    <FaQuoteLeft className="position-absolute top-0 start-0 translate-middle text-white bg-warning rounded-circle p-2" size={40} style={{backgroundColor: 'var(--royal-blue)'}} />
                     <p className="fs-5 mb-0" style={{fontStyle: 'italic', color: '#555', lineHeight: '1.7'}}>
                       "Building a home is not just about furniture; it's about creating a sanctuary where every piece tells your story. Our mission is to deliver premium, customized dream furniture that elevates everyday living."
                     </p>
@@ -427,7 +427,7 @@ const Home = () => {
           </section>
 
           {/* 7. LOCAL EXPERTISE */}
-          <section className="py-5" style={{backgroundColor: '#f1f0eb'}}>
+          <section className="py-5 bg-white">
             <div className="container py-5">
               <motion.div 
                 className="bg-white rounded-5 p-5 text-center shadow-sm max-w-4xl mx-auto"
@@ -437,8 +437,8 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="d-inline-flex align-items-center justify-content-center rounded-circle mb-4" style={{width: '80px', height: '80px', backgroundColor: 'rgba(200, 160, 58, 0.1)'}}>
-                  <FaMapMarkedAlt size={36} color="#C8A03A" />
+                <div className="d-inline-flex align-items-center justify-content-center rounded-circle mb-4" style={{width: '80px', height: '80px', backgroundColor: 'rgba(65, 105, 225, 0.1)'}}>
+                  <FaMapMarkedAlt size={36} color="var(--royal-blue)" />
                 </div>
                 <h2 className="display-5 fw-bold mb-4" style={{fontFamily: 'Playfair Display, serif', color: '#111'}}>Local Expertise</h2>
                 <p className="lead text-muted mb-5" style={{lineHeight: '1.7'}}>
@@ -452,7 +452,7 @@ const Home = () => {
           </section>
 
           {/* 8. PREMIUM CTA SECTION */}
-          <section className="py-5 text-center text-white" style={{background: 'linear-gradient(135deg, #111 0%, #1a1a1a 100%)', display: 'flex', alignItems: 'center', minHeight: '500px'}}>
+          <section className="py-5 text-center bg-white" style={{display: 'flex', alignItems: 'center', minHeight: '500px'}}>
             <div className="container py-5">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -460,25 +460,25 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <span className="text-uppercase fw-bold letter-spacing-2 mb-3 d-block" style={{color: '#C8A03A', fontSize: '0.9rem'}}>Begin Your Journey</span>
-                <h2 className="display-3 fw-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>Let's Craft the Home<br/>You've Always Imagined</h2>
-                <p className="lead mb-5 mx-auto text-light" style={{maxWidth: '600px', opacity: 0.8, fontWeight: 300, lineHeight: '1.6'}}>
+                <span className="text-uppercase fw-bold letter-spacing-2 mb-3 d-block" style={{color: 'var(--primary-purple)', fontSize: '0.9rem'}}>Begin Your Journey</span>
+                <h2 className="display-3 fw-bold mb-4" style={{fontFamily: 'Playfair Display, serif', color: '#111'}}>Let's Craft the Home<br/>You've Always Imagined</h2>
+                <p className="lead mb-5 mx-auto" style={{maxWidth: '600px', color: '#444', fontWeight: 300, lineHeight: '1.6'}}>
                   Book a private consultation with our experts and take the first step towards your luxurious new living space.
                 </p>
                 <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                  <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-sm" style={{backgroundColor: '#C8A03A', color: '#111', letterSpacing: '1px', transition: 'all 0.3s'}}>Book Consultation</button>
-                  <button className="btn btn-outline-light rounded-pill px-5 py-3 text-uppercase fw-bold" style={{letterSpacing: '1px', transition: 'all 0.3s'}}>Take Style Quiz</button>
+                  <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold shadow-sm" style={{backgroundColor: 'var(--royal-blue)', color: 'var(--text-white)', letterSpacing: '1px', transition: 'all 0.3s'}}>Book Consultation</button>
+                  <button className="btn btn-outline-primary rounded-pill px-5 py-3 text-uppercase fw-bold" style={{letterSpacing: '1px', transition: 'all 0.3s', borderColor: 'var(--royal-blue)', color: 'var(--royal-blue)'}} onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--royal-blue)'; e.currentTarget.style.color = '#fff'; }} onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--royal-blue)'; }}>Take Style Quiz</button>
                 </div>
               </motion.div>
             </div>
           </section>
 
           {/* 9. CLIENT TESTIMONIALS */}
-          <section className="py-5 bg-white overflow-hidden">
+          <section className="py-5 overflow-hidden text-white gradient-purple-blue">
             <div className="container-fluid py-5 my-md-4 px-0">
               <div className="text-center mb-5 pb-3 px-3">
-                <h2 className="display-4 fw-bold mb-3" style={{fontFamily: 'Playfair Display, serif', color: '#111'}}>What Our Clients Say</h2>
-                <div style={{width: '60px', height: '3px', backgroundColor: '#C8A03A', margin: '0 auto'}}></div>
+                <h2 className="display-4 fw-bold mb-3" style={{fontFamily: 'Playfair Display, serif', color: 'var(--text-white)'}}>What Our Clients Say</h2>
+                <div style={{width: '60px', height: '3px', backgroundColor: 'var(--royal-blue)', margin: '0 auto'}}></div>
               </div>
               
               <MarqueeTestimonials />
@@ -486,9 +486,9 @@ const Home = () => {
           </section>
 
           {/* 10. INSTAGRAM GALLERY */}
-          <section className="py-5" style={{backgroundColor: '#111'}}>
+          <section className="py-5 bg-white">
             <div className="container py-5 text-center">
-              <h2 className="display-4 fw-bold mb-5 text-white" style={{fontFamily: 'Playfair Display, serif'}}>Follow Our Journey</h2>
+              <h2 className="display-4 fw-bold mb-5" style={{fontFamily: 'Playfair Display, serif', color: 'var(--bg-dark)'}}>Follow Our Journey</h2>
               
               <div className="row g-3 mb-5">
                 {instagramImages.map((src, idx) => (
@@ -510,7 +510,7 @@ const Home = () => {
                 ))}
               </div>
               
-              <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold btn-outline-light" style={{letterSpacing: '1px'}}>
+              <button className="btn rounded-pill px-5 py-3 text-uppercase fw-bold btn-outline-dark" style={{letterSpacing: '1px'}}>
                 Follow on Instagram
               </button>
             </div>

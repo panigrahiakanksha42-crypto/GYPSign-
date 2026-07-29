@@ -80,7 +80,7 @@ const Productshowcase = () => {
         <div className="container text-center text-white position-relative z-1">
           <motion.h4 
             className="text-uppercase letter-spacing-2 mb-3" 
-            style={{color: '#C8A03A'}}
+            style={{color: 'var(--royal-blue)'}}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -146,15 +146,15 @@ const Productshowcase = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <h5 className="text-uppercase mb-2" style={{color: '#C8A03A', letterSpacing: '1px'}}>Premium Living Collection</h5>
+              <h5 className="text-uppercase mb-2" style={{color: 'var(--royal-blue)', letterSpacing: '1px'}}>Premium Living Collection</h5>
               <h2 className="display-5 fw-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>The Signature Series</h2>
               <p className="text-muted mb-4" style={{lineHeight: '1.7', fontSize: '1.1rem'}}>
                 Our flagship collection featuring imported fabrics, master-carved teak wood, and uncompromising comfort. Designed for those who demand absolute luxury in their living spaces.
               </p>
               <ul className="list-unstyled mb-5">
-                <li className="mb-2 d-flex align-items-center"><FaCheckCircle className="me-2" color="#C8A03A"/> Italian Leather Upholstery</li>
-                <li className="mb-2 d-flex align-items-center"><FaCheckCircle className="me-2" color="#C8A03A"/> 24k Gold Accent Detailing</li>
-                <li className="mb-2 d-flex align-items-center"><FaCheckCircle className="me-2" color="#C8A03A"/> Lifetime Warranty on Wood</li>
+                <li className="mb-2 d-flex align-items-center"><FaCheckCircle className="me-2" color="var(--royal-blue)"/> Italian Leather Upholstery</li>
+                <li className="mb-2 d-flex align-items-center"><FaCheckCircle className="me-2" color="var(--royal-blue)"/> 24k Gold Accent Detailing</li>
+                <li className="mb-2 d-flex align-items-center"><FaCheckCircle className="me-2" color="var(--royal-blue)"/> Lifetime Warranty on Wood</li>
               </ul>
               <button className="btn btn-gold-outline rounded-pill px-4 py-2" onClick={() => handleCategoryClick('Luxury Collection')}>
                 Explore Collection →
@@ -194,11 +194,11 @@ const Productshowcase = () => {
                       </div>
                       
                       <div className="showcase-overlay-content">
-                        <span className="badge bg-gold text-dark mb-2 px-3 py-2 text-uppercase fw-bold" style={{backgroundColor: '#C8A03A'}}>{product.category}</span>
+                        <span className="badge bg-gold text-dark mb-2 px-3 py-2 text-uppercase fw-bold" style={{backgroundColor: 'var(--royal-blue)'}}>{product.category}</span>
                         <h3 className="fw-bold mb-2" style={{fontFamily: 'Playfair Display, serif', fontSize: '2rem'}}>{product.title}</h3>
                         <p className="text-light opacity-75 small mb-3" style={{display: '-webkit-box', WebkitLineClamp: '2', WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>{product.desc}</p>
                         
-                        <div className="d-flex align-items-center gap-2 text-gold fw-bold text-uppercase" style={{color: '#C8A03A', fontSize: '0.85rem', letterSpacing: '1px'}}>
+                        <div className="d-flex align-items-center gap-2 text-gold fw-bold text-uppercase" style={{color: 'var(--royal-blue)', fontSize: '0.85rem', letterSpacing: '1px'}}>
                           <FaSearchPlus size={14}/> View Full Image
                         </div>
                       </div>
@@ -234,7 +234,7 @@ const Productshowcase = () => {
               <div className="col-12 col-md-6 col-lg-3" key={idx}>
                 <div className="feature-card h-100">
                   <div className="mb-3">
-                    <feature.icon size={40} color="#C8A03A" />
+                    <feature.icon size={40} color="var(--royal-blue)" />
                   </div>
                   <h5 className="fw-bold mb-2">{feature.title}</h5>
                   <p className="text-muted small mb-0">{feature.desc}</p>

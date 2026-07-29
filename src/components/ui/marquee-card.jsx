@@ -51,13 +51,13 @@ export const MarqueeTestimonials = () => {
                 className="h-12 w-12 object-cover rounded-full"
               />
               <div className="flex flex-col justify-center" >
-                <h4 className="font-semibold text-gray-900 text-[16px] m-0 leading-tight" style={{margin: '8px', padding: '5px'}} >
+                <h4 className="font-semibold text-[16px] m-0 leading-tight" style={{margin: '8px', padding: '5px', color: '#111'}} >
                   {testimonial.name}
                 </h4>
-                <p className="text-[13px] text-gray-500 m-0 leading-tight mt-0.5 text-uppercase" style={{ padding: '5px'}} >{testimonial.role}</p>
+                <p className="text-[13px] m-0 leading-tight mt-0.5 text-uppercase" style={{ padding: '5px', color: '#555'}} >{testimonial.role}</p>
               </div>
             </div>
-            <p className="mb-5 text-[14.5px] text-gray-700 leading-relaxed font-medium" style={{width: '350px', margin: '10px'}}>
+            <p className="mb-5 text-[14.5px] leading-relaxed font-medium" style={{width: '350px', margin: '10px', color: '#333'}}>
               {testimonial.content}
             </p>
             <div className="flex space-x-1.5 mt-auto pb-1" style={{width: '350px', margin: '10px'}}>
