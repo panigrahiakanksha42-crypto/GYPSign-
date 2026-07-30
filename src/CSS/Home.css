@@ -1,172 +1,703 @@
 /* ==========================================================================
-   HOME PAGE STYLES (10 Sections)
+   HOME PAGE STYLES — GYP Signatures
+   Artisan-luxury identity: walnut + brass + deep emerald, Fraunces + Manrope
    ========================================================================== */
-.letter-spacing-1 { letter-spacing: 1px; }
-.letter-spacing-2 { letter-spacing: 2px; }
 
-/* Gatekeeper Button Hover */
-.gatekeeper-btn:hover {
-  transform: translateY(-2px);
-}
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
-/* 1. Hero Buttons */
-.btn-cta-primary:hover {
-  background-color: var(--accent-purple) !important;
-  color: var(--text-white) !important;
-  transform: translateY(-2px);
-}
+/* Variables (names kept identical so inline styles in Home.jsx pick up the new palette automatically) */
+:root {
+  --primary-purple: #16302c;     /* deep emerald teal — secondary accent */
+  --royal-blue: #9c6b1f;         /* antique brass/gold — primary accent */
+  --highlight-purple: #d9b567;   /* brass-light, used by the gatekeeper gradient */
+  --bg-dark: #1a130d;            /* walnut near-black */
 
-@media (max-width: 575px) {
-  .w-sm-100 {
-    width: 100% !important;
-  }
+  /* Extra tokens used only within this file */
+  --brass-light: #d9b567;
+  --ivory: #f5eee1;
+  --parchment: #ece1cc;
+  --ink: #221a12;
+  --hairline: rgba(34, 26, 18, 0.12);
 }
 
-/* 2. Hero Responsive Styles */
-.hero-title {
-  font-size: calc(2.2rem + 1.5vw);
-}
-@media (min-width: 1200px) {
-  .hero-title {
-    font-size: 4rem; /* Equivalent to display-3 */
-  }
-}
-@media (max-width: 768px) {
-  .hero-section {
-    padding-top: 150px !important;
-  }
-  .hero-content-container {
-    padding-bottom: 140px !important;
-  }
-  .stat-number {
-    font-size: 1.25rem !important;
-  }
-  .stat-label {
-    font-size: 0.6rem !important;
-    letter-spacing: 0px !important;
-  }
+/* Typography & Layout */
+.home-wrapper {
+  font-family: 'Manrope', sans-serif;
+  color: var(--ink);
+  background-color: var(--ivory);
 }
 
-/* Founder Image Responsive Styles */
-.founder-img {
-  width: 100%;
-  object-fit: cover;
-  object-position: top center;
-  height: 600px;
-}
-@media (max-width: 991px) {
-  .founder-img {
-    height: 450px;
-  }
-}
-@media (max-width: 575px) {
-  .founder-img {
-    height: 400px;
-  }
+.gyp-section-title {
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
-/* 3. Statistics Cards */
-.stat-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  background-color: rgba(255,255,255,0.05) !important;
-}
-
-/* 10. Instagram Gallery */
-.instagram-item img {
-  transform: scale(1);
-}
-.instagram-item:hover img {
-  transform: scale(1.1) !important;
-}
-.instagram-item:hover .instagram-overlay {
-  opacity: 1 !important;
-}
-
-/* Testimonial slider button hover */
-.rounded-circle.bg-light:hover {
-  background-color: var(--royal-blue) !important;
-  color: #fff !important;
-  border-color: var(--royal-blue) !important;
-  transition: all 0.3s ease;
-}
-.rounded-circle.bg-light:hover svg {
-  fill: #fff !important;
-}
-
-/* 4. The GYP Difference Cards */
-.gyp-difference-card {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.gyp-difference-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
-}
-.gyp-difference-card .icon-wrapper {
-  transition: all 0.4s ease;
-}
-.gyp-difference-card:hover .icon-wrapper {
-  background-color: var(--royal-blue) !important;
-  transform: scale(1.1);
-}
-.gyp-difference-card .card-icon {
-  transition: all 0.4s ease;
-}
-.gyp-difference-card:hover .card-icon {
-  fill: #ffffff !important;
-  color: #ffffff !important;
-}
-
-/* 5. Why Choose GYP Cards */
-.why-choose-card {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+.gyp-divider {
+  width: 56px;
+  height: 2px;
+  background-color: var(--royal-blue);
   position: relative;
-  overflow: hidden;
+}
+
+.gyp-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--royal-blue);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.gyp-divider.bg-white::after {
+  background: var(--brass-light);
+}
+
+section {
+  padding: 96px 0;
+}
+
+/* ===== Signature motif: precision corner marks =====
+   A craftsman's measuring marks / gallery-framing corners, reused with
+   restraint across every visual card to tie the three service lines together. */
+.gyp-about-img-wrapper,
+.gyp-service-card,
+.gyp-project-card,
+.gyp-book-card,
+.gyp-feature-card {
+  position: relative;
+}
+
+.gyp-about-img-wrapper::before,
+.gyp-service-card::before,
+.gyp-project-card::before,
+.gyp-book-card::before,
+.gyp-feature-card::before,
+.gyp-about-img-wrapper::after,
+.gyp-service-card::after,
+.gyp-project-card::after,
+.gyp-book-card::after,
+.gyp-feature-card::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0.45;
+  z-index: 4;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gyp-about-img-wrapper::before,
+.gyp-service-card::before,
+.gyp-project-card::before,
+.gyp-book-card::before,
+.gyp-feature-card::before {
+  top: 14px;
+  left: 14px;
+  border-top: 2px solid var(--brass-light);
+  border-left: 2px solid var(--brass-light);
+}
+
+.gyp-about-img-wrapper::after,
+.gyp-service-card::after,
+.gyp-project-card::after,
+.gyp-book-card::after,
+.gyp-feature-card::after {
+  bottom: 14px;
+  right: 14px;
+  border-bottom: 2px solid var(--brass-light);
+  border-right: 2px solid var(--brass-light);
+}
+
+.gyp-about-img-wrapper:hover::before,
+.gyp-service-card:hover::before,
+.gyp-project-card:hover::before,
+.gyp-book-card:hover::before,
+.gyp-feature-card:hover::before {
+  top: 8px;
+  left: 8px;
+  opacity: 1;
+}
+
+.gyp-about-img-wrapper:hover::after,
+.gyp-service-card:hover::after,
+.gyp-project-card:hover::after,
+.gyp-book-card:hover::after,
+.gyp-feature-card:hover::after {
+  bottom: 8px;
+  right: 8px;
+  opacity: 1;
+}
+
+.gyp-hero {
+  min-height: 100vh;
+  padding-top: 250px;
+  padding-bottom: 120px;
+  position: relative;
+}
+
+.gyp-hero-bg {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: saturate(0.92);
+  z-index: 0;
+}
+
+@media (max-width: 1024px) {
+  .gyp-hero-bg {
+    background-attachment: scroll;
+  }
+}
+
+/* faint diagonal grain, evokes wood grain / linen without being literal */
+.gyp-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(245, 238, 225, 0.035) 0px,
+    rgba(245, 238, 225, 0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
   z-index: 1;
 }
 
-.why-choose-card::before {
+.gyp-hero-overlay {
+  background: linear-gradient(
+    160deg,
+    rgba(26, 19, 13, 0.92) 10%,
+    rgba(22, 48, 44, 0.55) 55%,
+    rgba(156, 107, 31, 0.32) 100%
+  );
+  z-index: 1;
+}
+
+.gyp-hero-content {
+  max-width: 900px;
+  padding: 0 15px;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+
+.gyp-hero-sub {
+  letter-spacing: 4px;
+  color: var(--brass-light);
+  font-size: 0.95rem;
+  margin-bottom: 2rem !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.gyp-hero-sub::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--brass-light);
+  display: inline-block;
+}
+
+.gyp-hero-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-size: clamp(2.3rem, 4.6vw, 4.1rem);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.gyp-hero-desc {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  max-width: 640px;
+  line-height: 1.75;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3rem !important;
+}
+
+.gyp-btn-primary {
+  background-color: var(--royal-blue);
+  color: white;
+  border: 1px solid var(--royal-blue);
+  border-radius: 2px;
+  padding: 16px 42px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gyp-btn-primary:hover {
+  background-color: transparent;
+  color: var(--brass-light);
+  border-color: var(--brass-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.gyp-btn-outline {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(245, 238, 225, 0.4);
+  border-radius: 2px;
+  padding: 16px 42px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(5px);
+}
+
+.gyp-btn-outline:hover {
+  background-color: rgba(245, 238, 225, 0.08);
+  color: var(--brass-light);
+  border-color: var(--brass-light);
+  transform: translateY(-2px);
+}
+
+.gyp-btn-primary:focus-visible,
+.gyp-btn-outline:focus-visible,
+.gyp-btn-outline-dark:focus-visible {
+  outline: 2px solid var(--brass-light);
+  outline-offset: 3px;
+}
+
+/* 2. ABOUT GYP */
+.gyp-about {
+  background: var(--ivory);
+}
+
+.gyp-about-img-wrapper {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.gyp-about-img-wrapper img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: saturate(0.95);
+}
+
+/* 3. CORE SERVICES */
+.gyp-services {
+  background: var(--parchment) !important;
+}
+
+.gyp-service-card {
+  background: var(--ivory);
+  border: 1px solid var(--hairline) !important;
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.gyp-service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(212, 175, 55, 0.15) !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+.gyp-service-card h4 {
+  font-family: 'Fraunces', serif;
+}
+
+.gyp-service-img {
+  height: 250px;
+  overflow: hidden;
+}
+
+.gyp-service-img img {
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.95);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gyp-service-card:hover .gyp-service-img img {
+  transform: scale(1.1);
+}
+
+.gyp-service-icon {
+  color: var(--royal-blue);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  background: var(--ivory);
+  transition: all 0.4s ease;
+}
+
+.gyp-service-card:hover .gyp-service-icon {
+  background: var(--brass-light);
+  color: #fff;
+  border-color: var(--brass-light);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* 4. WHY CHOOSE GYP */
+.gyp-why-choose {
+  background: linear-gradient(rgba(26, 19, 13, 0.92), rgba(26, 19, 13, 0.92)),
+    url('https://images.unsplash.com/photo-1517702145080-e4a4d91435bb?auto=format&fit=crop&w=2000&q=80')
+      center/cover fixed;
+  position: relative;
+}
+
+.gyp-why-choose::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--royal-blue) 0%, var(--primary-purple) 100%);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  background: rgba(26, 19, 13, 0.55);
 }
 
-.why-choose-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(65, 105, 225, 0.25) !important;
-  border-color: transparent !important;
+.gyp-why-choose .gyp-section-title {
+  color: var(--ivory);
 }
 
-.why-choose-card:hover::before {
-  opacity: 1;
+.gyp-feature-card {
+  background: rgba(245, 238, 225, 0.04);
+  border: 1px solid rgba(245, 238, 225, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
 }
 
-.why-choose-card:hover h5,
-.why-choose-card:hover p {
-  color: #ffffff !important;
+.gyp-feature-card:hover {
+  background: rgba(217, 181, 103, 0.12);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(217, 181, 103, 0.6);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4), 0 0 20px rgba(217, 181, 103, 0.15);
 }
 
-.why-choose-card:hover p {
-  opacity: 0.9;
+.gyp-feature-icon {
+  color: var(--brass-light);
+  font-size: 2.2rem;
+  transition: transform 0.4s ease;
 }
 
-.why-choose-card:hover .icon-container {
-  background-color: #ffffff !important;
-  transform: scale(1.15) rotate(5deg);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+.gyp-feature-card:hover .gyp-feature-icon {
+  transform: scale(1.15);
+  color: #fff;
 }
 
-.why-choose-card:hover .why-icon {
-  fill: var(--royal-blue) !important;
-  color: var(--royal-blue) !important;
+.gyp-feature-icon {
+  color: var(--brass-light);
+  font-size: 2rem;
+}
+
+.gyp-feature-card h5 {
+  font-family: 'Fraunces', serif;
+}
+
+/* 5. FEATURED PROJECTS */
+.gyp-tab-btn {
+  background: var(--ivory);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  padding: 8px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* 8. CUSTOMER REVIEWS */
+.gyp-testimonial-card {
+  background: var(--ivory);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  transition: all 0.4s ease;
+}
+.gyp-testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.gyp-tab-btn:hover,
+.gyp-tab-btn.active {
+  background: var(--royal-blue);
+  color: white;
+  border-color: var(--royal-blue);
+}
+
+.gyp-projects {
+  background: var(--ivory) !important;
+}
+
+.gyp-project-card {
+  height: 300px;
+  border-radius: 4px;
+}
+
+.gyp-project-card img {
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.95);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gyp-project-card:hover img {
+  transform: scale(1.08);
+}
+
+.gyp-project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(26, 19, 13, 0.92), transparent);
+  padding: 32px 22px 20px;
+  transition: all 0.3s ease;
+}
+
+.gyp-project-overlay .badge {
+  background-color: var(--royal-blue) !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  border-radius: 2px;
+  padding: 6px 12px;
+}
+
+.gyp-project-overlay h4 {
+  font-family: 'Fraunces', serif;
+}
+
+.gyp-btn-outline-dark {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  padding: 14px 38px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.gyp-btn-outline-dark:hover {
+  background-color: var(--ink);
+  color: var(--ivory);
+  border-color: var(--ink);
+}
+
+/* 6. OUR PROCESS */
+.gyp-process {
+  background: var(--ivory);
+}
+
+.gyp-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.gyp-timeline::-webkit-scrollbar {
+  height: 6px;
+}
+
+.gyp-timeline::-webkit-scrollbar-thumb {
+  background-color: var(--hairline);
+  border-radius: 10px;
+}
+
+.gyp-timeline::before {
+  content: '';
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brass-light), transparent);
+  z-index: 1;
+}
+
+.gyp-timeline-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  min-width: 150px;
+  padding: 0 10px;
+}
+
+.gyp-step-icon {
+  width: 76px;
+  height: 76px;
+  background: var(--ivory);
+  border: 1.5px solid var(--royal-blue);
+  color: var(--royal-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 auto;
+  transition: all 0.35s ease;
+}
+
+.gyp-timeline-step h5 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+}
+
+.gyp-timeline-step:hover .gyp-step-icon {
+  background: var(--royal-blue);
+  color: white;
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px rgba(156, 107, 31, 0.25);
+}
+
+@media (max-width: 768px) {
+  .gyp-timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gyp-timeline::before {
+    display: none;
+  }
+  .gyp-timeline-step {
+    margin-bottom: 30px;
+  }
+}
+
+/* 7. STATISTICS */
+.gyp-stats {
+  background: radial-gradient(circle at 20% 20%, #241a10 0%, var(--bg-dark) 60%);
+  padding: 110px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.gyp-stats::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(245, 238, 225, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+.gyp-stat-item {
+  border-right: 1px solid rgba(245, 238, 225, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.gyp-stat-item h2 {
+  font-family: 'Fraunces', serif;
+  color: var(--brass-light);
+}
+
+.gyp-stat-item p {
+  color: rgba(245, 238, 225, 0.7);
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.col-lg-3:last-child .gyp-stat-item {
+  border-right: none;
+}
+
+@media (max-width: 991px) {
+  .gyp-stat-item {
+    border-right: none;
+    margin-bottom: 20px;
+  }
+}
+
+/* 8. CUSTOMER REVIEWS */
+.gyp-reviews {
+  background: var(--parchment) !important;
+}
+
+/* 9. BOOK CONSULTATION */
+.gyp-book {
+  background: var(--ivory);
+}
+
+.gyp-book-card {
+  background: var(--ivory);
+  border: 1px solid var(--hairline) !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.gyp-book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(26, 19, 13, 0.14) !important;
+}
+
+.gyp-book-card h4 {
+  font-family: 'Fraunces', serif;
+}
+
+.gyp-book-icon {
+  color: var(--primary-purple);
+}
+
+/* Accessibility & motion floor */
+@media (prefers-reduced-motion: reduce) {
+  .home-wrapper *,
+  .home-wrapper *::before,
+  .home-wrapper *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .gyp-hero-bg,
+  .gyp-why-choose {
+    background-attachment: scroll !important;
+  }
+}
+
+/* MOBILE RESPONSIVE TWEAKS */
+@media (max-width: 768px) {
+  section {
+    padding: 64px 0;
+  }
+
+  .gyp-hero-sub {
+    font-size: 0.8rem;
+  }
+
+  .gyp-about-img-wrapper img {
+    height: 350px;
+  }
+
+  .gyp-btn-primary,
+  .gyp-btn-outline {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

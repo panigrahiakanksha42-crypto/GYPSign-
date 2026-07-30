@@ -43,8 +43,8 @@ export const MarqueeTestimonials = () => {
     <div className="py-8 overflow-hidden w-100">
       <Marquee pauseOnHover repeat={4} speed="normal">
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="mx-3 rounded-[1.75rem] bg-white border border-gray-100 p-6 flex flex-col" style={{width: '90vw', maxWidth: '380px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)'}}>
-            <div className="mb-4 flex items-center space-x-3" style={{width: '100%', margin: '10px 0'}}>
+          <div key={index} className="mx-3 gyp-testimonial-card p-4 p-md-5 flex flex-col" style={{width: '90vw', maxWidth: '400px'}}>
+            <div className="mb-4 flex items-center space-x-3" style={{width: '100%', margin: '0 0 20px 0'}}>
               <img
                 src={testimonial.avatar || "/placeholder.svg"}
                 alt={testimonial.name}
