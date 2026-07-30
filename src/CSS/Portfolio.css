@@ -1,420 +1,639 @@
 /* ==========================================================================
    PROJECT PORTFOLIO STYLES
+   Premium Walnut, Ivory, and Brass Theme
    ========================================================================== */
 
-/* 1. Hero Banner */
-.portfolio-hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding-top: 160px;
-  padding-bottom: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.gyp-theme {
+  --ivory: #f5eee1;
+  --parchment: #ece1cc;
+  --ink: #221a12;
+  --bg-dark: #1a130d;
+  --brass-light: #d9b567;
+  --gold: #d4af37;
+  --royal-blue: #9c6b1f; /* Used as Antique Brass/Gold in this theme */
+  
+  font-family: 'Manrope', sans-serif;
+  color: var(--ink);
+  background-color: var(--ivory);
 }
 
-.portfolio-glass-content {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  padding: 5rem 4rem;
-  max-width: 1100px;
-  width: 90%;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 30px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-}
+.bg-ivory { background-color: var(--ivory); }
+.bg-parchment { background-color: var(--parchment); }
+.bg-dark-walnut { background-color: var(--bg-dark); }
 
-.portfolio-hero-badge {
-  display: inline-block;
-  padding: 8px 20px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 50px;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 2rem;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.portfolio-hero-title {
-  font-size: 4.5rem;
+.gyp-section-title {
+  font-family: 'Fraunces', serif;
   font-weight: 700;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #fff;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  font-family: 'Playfair Display', serif;
+  color: var(--ink);
+  margin-bottom: 1rem;
 }
 
-.portfolio-hero-desc {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto 2.5rem auto;
-  opacity: 0.95;
-  font-weight: 300;
+.gyp-text-muted {
+  color: rgba(34, 26, 18, 0.7);
   line-height: 1.8;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.portfolio-hero-btn {
+.gyp-divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--gold);
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--royal-blue), #3C0467);
-  color: #fff;
-  padding: 16px 40px;
-  border-radius: 50px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.2);
-  display: inline-flex;
-  align-items: center;
-  transition: all 0.4s ease;
-  box-shadow: 0 10px 30px rgba(65, 105, 225, 0.4);
 }
 
-.portfolio-hero-btn::after {
+.gyp-divider::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: all 0.6s ease;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.portfolio-hero-btn:hover::after {
-  left: 150%;
+/* =========================================
+   BUTTONS
+   ========================================= */
+.btn-gyp-gold {
+  background: var(--gold);
+  color: var(--bg-dark);
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  transition: all 0.4s ease;
+}
+.btn-gyp-gold:hover {
+  background: var(--ivory);
+  color: var(--bg-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
 }
 
-.portfolio-hero-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(84, 7, 136, 0.5);
-  color: #fff;
+.btn-gyp-gold-solid {
+  background: var(--gold);
+  color: var(--bg-dark);
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+}
+.btn-gyp-gold-solid:hover {
+  background: var(--bg-dark);
+  color: var(--gold);
+  box-shadow: 0 10px 20px rgba(26, 19, 13, 0.5);
+  transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
-  .portfolio-hero {
-    min-height: 80vh;
-    padding-top: 100px;
-  }
-  .portfolio-glass-content {
-    padding: 2rem 1.5rem;
-  }
-  .portfolio-hero-title {
-    font-size: 2.5rem;
-  }
+.btn-gyp-outline {
+  background: transparent;
+  color: var(--bg-dark);
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid var(--bg-dark);
+  transition: all 0.4s ease;
+}
+.btn-gyp-outline:hover {
+  background: var(--bg-dark);
+  color: var(--ivory);
+  transform: translateY(-3px);
 }
 
-/* 3. Project Category Cards */
-.portfolio-cat-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  height: 250px;
+.btn-gyp-outline-white {
+  background: transparent;
+  color: var(--ivory);
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid var(--ivory);
+  transition: all 0.4s ease;
+}
+.btn-gyp-outline-white:hover {
+  background: var(--ivory);
+  color: var(--bg-dark);
+  transform: translateY(-3px);
+}
+
+.btn-gyp-text {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-weight: 700;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 24px;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.btn-gyp-text:hover {
+  color: var(--bg-dark);
+  transform: translateX(5px);
 }
 
-.portfolio-cat-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-
-.portfolio-cat-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
+.btn-gyp-block {
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-  transition: transform 0.7s ease;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid rgba(34, 26, 18, 0.2);
+  color: var(--ink);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+}
+.btn-gyp-block:hover {
+  background: var(--bg-dark);
+  color: var(--gold);
+  border-color: var(--bg-dark);
 }
 
-.portfolio-cat-card:hover .portfolio-cat-bg {
-  transform: scale(1.1);
-}
-
-.portfolio-cat-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
-  z-index: 2;
-}
-
-.portfolio-cat-content {
+/* =========================================
+   1. HERO BANNER
+   ========================================= */
+.portfolio-hero {
   position: relative;
-  z-index: 3;
-}
-
-.portfolio-cat-icon {
-  width: 50px;
-  height: 50px;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(5px);
-  border-radius: 50%;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  overflow: hidden;
+  padding-top: 100px;
+}
+@media (max-width: 768px) {
+  .portfolio-hero { min-height: 50vh; }
 }
 
-/* 5. Completed Projects Grid (Shares styling with Showcase but unique layout) */
-.product-card {
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.hero-bg-slider {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(26,19,13,0.7), rgba(26,19,13,0.9));
+  z-index: 1;
+}
+
+.gyp-hero-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.gyp-hero-title {
+  font-family: 'Fraunces', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ivory);
+}
+
+.gyp-hero-desc {
+  font-size: 1.2rem;
+  color: rgba(245, 238, 225, 0.8);
+  max-width: 600px;
+}
+
+/* Floating Shapes */
+.floating-shape {
+  position: absolute;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  z-index: 1;
+  border-radius: 50%;
+  animation: float 10s infinite linear;
+}
+.shape-1 { width: 300px; height: 300px; top: -100px; left: -100px; }
+.shape-2 { width: 500px; height: 500px; bottom: -200px; right: -100px; animation-duration: 15s; }
+
+@keyframes float {
+  0% { transform: rotate(0deg) translate(0, 0); }
+  50% { transform: rotate(180deg) translate(20px, 20px); }
+  100% { transform: rotate(360deg) translate(0, 0); }
+}
+
+/* =========================================
+   2. OVERVIEW
+   ========================================= */
+.gyp-image-frame {
   position: relative;
+  padding: 20px;
+}
+.gyp-image-frame::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 2px solid var(--gold);
+  transform: translate(15px, 15px);
+  z-index: 0;
+}
+.gyp-image-frame img {
+  position: relative;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   3. CATEGORIES
+   ========================================= */
+.gyp-cat-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 350px;
   cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.gyp-cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.gyp-cat-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,19,13,0.9), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  transition: background 0.4s ease;
+}
+.gyp-cat-title {
+  color: var(--ivory);
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  margin: 0;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
+}
+
+.gyp-cat-card:hover {
+  box-shadow: 0 20px 40px rgba(212,175,55,0.2);
+}
+.gyp-cat-card:hover .gyp-cat-img {
+  transform: scale(1.05);
+}
+.gyp-cat-card:hover .gyp-cat-overlay {
+  background: linear-gradient(to top, rgba(26,19,13,0.95), rgba(212,175,55,0.2));
+}
+.gyp-cat-card:hover .gyp-cat-title {
+  transform: translateY(0);
+  color: var(--gold);
+}
+
+/* =========================================
+   4. FEATURED
+   ========================================= */
+.gyp-featured-card {
+  background: var(--ivory);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(212,175,55,0.1);
+}
+.gyp-featured-img-wrap {
+  height: 350px;
+  overflow: hidden;
+}
+.gyp-featured-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.gyp-featured-content {
+  padding: 40px;
+}
+.gyp-featured-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(26,19,13,0.15);
+  border-color: var(--gold);
+}
+.gyp-featured-card:hover .gyp-featured-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   5, 6, 7. PROJECT CARDS (ART, INTERIOR, EVENT)
+   ========================================= */
+.gyp-project-card {
+  background: var(--ivory);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(34,26,18,0.05);
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Black shadow on hover */
-}
-
-.product-img-wrapper {
-  position: relative;
+.gyp-project-img-wrap {
+  height: 250px;
   overflow: hidden;
-  height: 280px; /* Force all images to be the exact same height */
-  width: 100%;
+  position: relative;
 }
-
-.product-img-wrapper img {
+.gyp-project-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures images fill the box perfectly without distortion */
+  object-fit: cover;
   transition: transform 0.6s ease;
 }
-
-.product-card:hover .product-img-wrapper img {
-  transform: scale(1.08);
+.gyp-project-info {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.gyp-project-cat {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+}
+.gyp-project-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+.gyp-project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.85rem;
+  color: rgba(34,26,18,0.7);
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
-.gallery-filter-btn {
-  background: transparent;
-  border: 1px solid #ddd;
-  padding: 8px 20px;
-  border-radius: 30px;
-  color: #555;
-  margin: 5px;
-  transition: all 0.3s ease;
+.gyp-project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(212,175,55,0.2);
+  border-color: var(--gold);
 }
-.gallery-filter-btn:hover, .gallery-filter-btn.active {
-  background: #111;
-  color: #fff;
-  border-color: #111;
+.gyp-project-card:hover .gyp-project-img {
+  transform: scale(1.05);
 }
 
-/* 6. Before & After Slider */
+/* =========================================
+   8. BEFORE & AFTER
+   ========================================= */
 .ba-slider-container {
   position: relative;
   width: 100%;
   max-width: 1000px;
+  height: 600px;
   margin: 0 auto;
-  aspect-ratio: 16/9;
-  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  border: 4px solid var(--ivory);
 }
-
+@media (max-width: 768px) {
+  .ba-slider-container { height: 400px; }
+}
 .ba-image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
 }
-
-.ba-image-after {
-  z-index: 1;
-}
-
-.ba-image-before {
-  z-index: 2;
-  /* Clip-path is applied dynamically via inline styles in React based on slider value */
-}
-
-/* Custom Range Input */
 .ba-slider-input {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  opacity: 0; /* Invisible but draggable */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
   cursor: ew-resize;
+  z-index: 10;
 }
-
-/* Slider Handle Visual */
 .ba-slider-line {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 0; bottom: 0;
   width: 4px;
-  background: #fff;
-  z-index: 2;
-  pointer-events: none; /* Let clicks pass to the invisible range input */
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background: var(--gold);
+  z-index: 5;
   transform: translateX(-50%);
+  pointer-events: none;
 }
-
 .ba-slider-button {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  background: var(--royal-blue);
-  border: 3px solid #fff;
+  width: 40px; height: 40px;
+  background: var(--ivory);
+  border: 2px solid var(--gold);
+  color: var(--bg-dark);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
-
 .ba-label {
   position: absolute;
   bottom: 20px;
-  padding: 6px 15px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  border-radius: 20px;
+  padding: 8px 16px;
+  background: rgba(26,19,13,0.8);
+  color: var(--ivory);
+  border-radius: 4px;
   font-size: 0.85rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  z-index: 3;
-  pointer-events: none;
+  z-index: 4;
 }
-.ba-label-before { right: 20px; }
-.ba-label-after { left: 20px; }
+.ba-label-before { left: 20px; }
+.ba-label-after { right: 20px; }
 
 
-/* 7. Design Process Timeline */
-.process-timeline {
+/* =========================================
+   9. PROJECT JOURNEY
+   ========================================= */
+.journey-timeline {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   position: relative;
+  padding-top: 40px;
 }
-
-@media (min-width: 992px) {
-  .process-timeline {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  /* Connecting line on desktop */
-  .process-timeline::before {
-    content: '';
-    position: absolute;
-    top: 40px; /* Aligned with icon center */
-    left: 5%;
-    right: 5%;
-    height: 2px;
-    background: #e0e0e0;
-    z-index: 1;
-  }
+.journey-timeline::before {
+  content: '';
+  position: absolute;
+  top: 65px; left: 0; width: 100%; height: 2px;
+  background: rgba(212,175,55,0.3);
+  z-index: 0;
 }
-
-/* Connecting line on mobile */
-@media (max-width: 991px) {
-  .process-timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 40px;
-    width: 2px;
-    background: #e0e0e0;
-    z-index: 1;
-  }
-}
-
-.process-step {
+.journey-step {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   text-align: center;
-  flex: 1;
-  padding: 0 15px;
-  margin-bottom: 40px;
+  width: 15%;
 }
-
-@media (max-width: 991px) {
-  .process-step {
-    text-align: left;
-    display: flex;
-    align-items: flex-start;
-    padding-left: 0;
-  }
-}
-
-.process-icon-wrapper {
-  width: 80px;
-  height: 80px;
-  background: #fff;
-  border: 2px solid var(--royal-blue);
+.journey-icon {
+  width: 50px; height: 50px;
+  background: var(--ivory);
+  border: 2px solid var(--gold);
+  color: var(--bg-dark);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-  color: var(--royal-blue);
-  font-size: 1.5rem;
-  box-shadow: 0 10px 20px rgba(65, 105, 225, 0.15);
+  margin: 0 auto 20px auto;
+  font-size: 1.2rem;
   transition: all 0.3s ease;
 }
-
-.process-step:hover .process-icon-wrapper {
-  background: var(--royal-blue);
-  color: #fff;
+.journey-step:hover .journey-icon {
+  background: var(--bg-dark);
+  color: var(--gold);
   transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(212,175,55,0.5);
+}
+.journey-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.journey-desc {
+  font-size: 0.85rem;
+  color: rgba(34,26,18,0.7);
 }
 
 @media (max-width: 991px) {
-  .process-icon-wrapper {
-    margin: 0 25px 0 0;
+  .journey-timeline {
+    flex-direction: column;
+    padding-left: 40px;
+    padding-top: 0;
+  }
+  .journey-timeline::before {
+    top: 0; left: 65px; width: 2px; height: 100%;
+  }
+  .journey-step {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .journey-icon {
+    margin: 0 20px 0 0;
     flex-shrink: 0;
   }
 }
 
-/* Testimonial Card */
-.testimonial-card {
-  background: #fff;
-  border-radius: 16px;
+/* =========================================
+   10. SUCCESS STORIES
+   ========================================= */
+.gyp-story-card {
+  background: var(--ivory);
+  border: 1px solid rgba(212,175,55,0.2);
   padding: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-radius: 8px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+}
+.gyp-story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  border-color: var(--gold);
+}
+.story-stars {
+  color: var(--gold);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+.story-text {
+  font-style: italic;
+  color: rgba(34,26,18,0.8);
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+.story-client {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.story-client img {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+}
+.story-client h5 {
+  margin: 0; font-weight: 700; font-size: 1rem;
+}
+.story-client span {
+  font-size: 0.8rem; color: rgba(34,26,18,0.6);
+  text-transform: uppercase; letter-spacing: 1px;
+}
+
+/* =========================================
+   11. STATISTICS
+   ========================================= */
+.stat-card {
+  padding: 20px;
+}
+.stat-icon {
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+.stat-number {
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.stat-label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  color: rgba(245,238,225,0.7);
+}
+
+/* =========================================
+   12. PREMIUM CTA
+   ========================================= */
+.gyp-cta-section {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+.gyp-cta-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') center/cover;
+  z-index: 0;
+}
+.gyp-cta-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(26,19,13,0.85); /* Dark Walnut overlay */
+  z-index: 1;
 }

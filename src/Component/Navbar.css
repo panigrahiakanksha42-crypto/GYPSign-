@@ -26,6 +26,7 @@
 
 .logo-text {
   font-size: 2rem;
+  color: #ffffff !important;
 }
 .main-header.scrolled .logo-text {
   font-size: 1.6rem;

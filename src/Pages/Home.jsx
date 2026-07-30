@@ -164,16 +164,17 @@ const Home = () => {
               </motion.div>
               
               <motion.h1 
-                className="display-2 fw-bold mb-4 gyp-hero-title"
+                className="display-2 fw-bold mb-4 gyp-hero-title text-white"
                 initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 transition={{ ...premiumTransition, delay: 0.4 }}
               >
-                Crafting Art, Interiors &<br/>Unforgettable Experiences
+                Crafting <span style={{ color: '#d4af37' }}>Art, Interiors</span> &<br/>
+                <span style={{ color: '#d4af37' }}>Unforgettable Experiences</span>
               </motion.h1>
               
               <motion.p 
-                className="lead mb-5 gyp-hero-desc"
+                className="lead mb-5 gyp-hero-desc text-white"
                 style={{ maxWidth: '700px', fontSize: '1.25rem', lineHeight: '1.8' }}
                 initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
