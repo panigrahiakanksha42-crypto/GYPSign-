@@ -6,8 +6,15 @@
   padding: 0;
 }
 
-body {
+html, body {
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+#root, .app-container {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 :root {

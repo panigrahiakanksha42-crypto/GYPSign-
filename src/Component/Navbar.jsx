@@ -299,8 +299,8 @@ const Navbar = () => {
                 <div className={`mobile-submenu ${expandedMenu === 'experience' ? 'expanded' : ''}`}>
                   <ul className="list-unstyled ps-4 pb-3 m-0 d-flex flex-column gap-3">
                     <li><a href="/experience/style" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/experience/style')}>Style Discovery</a></li>
-                    <li><a href="/experience/budget" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/experience/budget')}>Budget Estimator</a></li>
-                    <li><a href="/experience/center" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/experience/center')}>Experience Center</a></li>
+                    {/* <li><a href="/experience/budget" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/experience/budget')}>Budget Estimator</a></li>
+                    <li><a href="/experience/center" className="text-decoration-none text-light opacity-75" onClick={(e) => handleNavigate(e, '/experience/center')}>Experience Center</a></li> */}
                   </ul>
                 </div>
               </li>

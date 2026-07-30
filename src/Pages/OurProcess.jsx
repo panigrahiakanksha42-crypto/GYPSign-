@@ -68,6 +68,10 @@ const OurProcess = () => {
       <section className="process-hero">
         <div className="process-hero-bg"></div>
         <div className="process-hero-overlay"></div>
+        {/* Animated Background Orbs */}
+        <div className="process-orb process-orb-1"></div>
+        <div className="process-orb process-orb-2"></div>
+
         <div className="container process-hero-content text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp}>
             <div className="mb-4">
@@ -78,7 +82,7 @@ const OurProcess = () => {
               initial={{opacity: 0, scale: 0.95}} animate={{opacity: 1, scale: 1}}
               transition={{delay: 0.2, duration: 1}}
             >
-              From Your Dream<br className="d-none d-md-block"/>To Your Dream Home
+              From Your <span className="process-gold-text">Dream</span><br className="d-none d-md-block"/>To Your <span className="process-gold-text">Dream Home</span>
             </motion.h1>
             <motion.p 
               className="lead mb-5 mx-auto" 
@@ -89,7 +93,7 @@ const OurProcess = () => {
               Every project follows a carefully planned journey to deliver exceptional quality.
             </motion.p>
             <motion.div 
-              className="d-flex justify-content-center"
+              className="d-flex justify-content-center mt-5 pt-4"
               initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}}
               transition={{delay: 0.5, duration: 0.6}}
             >
@@ -127,8 +131,11 @@ const OurProcess = () => {
         </div>
 
         <div className="process-timeline-container">
-          <div className="process-timeline-line d-none d-lg-block">
-            <div className="process-timeline-progress" style={{width: `${(activeStep / (steps.length - 1)) * 100}%`}}></div>
+          <div className="process-timeline-line">
+            {/* Desktop Horizontal Progress */}
+            <div className="process-timeline-progress d-none d-lg-block" style={{width: `${(activeStep / (steps.length - 1)) * 100}%`}}></div>
+            {/* Mobile Vertical Progress */}
+            <div className="process-timeline-progress d-lg-none" style={{height: `${(activeStep / (steps.length - 1)) * 100}%`}}></div>
           </div>
           
           <div className="process-steps-wrapper">

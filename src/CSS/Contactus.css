@@ -37,13 +37,14 @@
 .contact-hero {
   position: relative;
   width: 100%;
-  height: 85vh;
-  min-height: 700px;
+  min-height: 100vh;
   display: flex;
-  padding-top: 120px; /* Offset for navbar */
+  padding-top: 160px;
+  padding-bottom: 80px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: var(--contact-dark);
 }
 
 .contact-hero-bg {
@@ -52,8 +53,15 @@
   background-image: url('https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1920');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   animation: bgZoomContact 25s infinite alternate ease-in-out;
   z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .contact-hero-bg {
+    background-attachment: scroll;
+  }
 }
 
 @keyframes bgZoomContact {
@@ -68,17 +76,48 @@
   z-index: 2;
 }
 
+@keyframes floatGlass {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
 .contact-hero-content {
   position: relative;
   z-index: 3;
-  text-align: center;
   color: white;
-  padding: 0 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 1100px;
+  padding: 5rem 4rem;
+  margin-top: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  animation: floatGlass 7s ease-in-out infinite;
 }
 
 .contact-hero-content h1, 
 .contact-hero-content h4 {
   color: white;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.contact-gold-text {
+  background: linear-gradient(135deg, #FFF1B8 0%, #D4AF37 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-shadow: none;
+  font-style: italic;
+  font-weight: 800;
+  padding: 0 2px;
 }
 
 .contact-floating-shape {
@@ -87,6 +126,12 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   z-index: 2;
+  animation: floatOrb 10s infinite alternate ease-in-out;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(50px, -50px) scale(1.2); }
 }
 
 /* Buttons */
@@ -529,8 +574,13 @@
 
 @media (max-width: 768px) {
   .contact-hero {
-    height: 50vh;
-    min-height: 400px;
+    min-height: 100vh;
+    padding-top: 180px;
+  }
+  
+  .contact-hero-content {
+    padding: 3rem 1.5rem;
+    margin-top: 20px;
   }
   
   .contact-info-grid {

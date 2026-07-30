@@ -382,7 +382,7 @@ const Home = () => {
           </section>
 
           {/* 4. THE GYP DIFFERENCE */}
-          <section className="py-5 bg-white">
+          <section className="py-5 bg-white overflow-hidden">
             <div className="container py-5 my-md-4">
               <div className="text-center mb-5 pb-3">
                 <span className="text-uppercase fw-bold letter-spacing-2" style={{color: 'var(--royal-blue)', fontSize: '0.9rem'}}>The GYP Difference</span>
@@ -421,7 +421,7 @@ const Home = () => {
           </section>
 
           {/* 5. WHY CHOOSE GYP SIGNATURES (6 Features Grid) */}
-          <section className="py-5 bg-white">
+          <section className="py-5 bg-white overflow-hidden">
             <div className="container py-5 my-md-4">
               <div className="text-center mb-5 pb-3">
                 <h2 className="display-5 fw-bold mb-3" style={{fontFamily: 'Playfair Display, serif', color: '#111'}}>We don't just build furniture;<br/>we create lifestyles.</h2>
@@ -458,7 +458,7 @@ const Home = () => {
           </section>
 
           {/* 6. FOUNDER STORY */}
-          <section className="py-5 bg-white border-top">
+          <section className="py-5 bg-white border-top overflow-hidden">
             <div className="container py-5">
               <div className="row align-items-center g-5">
                 <motion.div 
@@ -502,7 +502,7 @@ const Home = () => {
           </section>
 
           {/* 7. LOCAL EXPERTISE */}
-          <section className="py-5 bg-white">
+          <section className="py-5 bg-white overflow-hidden">
             <div className="container py-5">
               <motion.div 
                 className="rounded-5 p-5 text-center shadow-lg position-relative overflow-hidden"

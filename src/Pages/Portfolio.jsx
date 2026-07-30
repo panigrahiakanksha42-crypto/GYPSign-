@@ -179,7 +179,6 @@ const Portfolio = () => {
                     <h4 className="fw-bold mb-1">{cat.name}</h4>
                     <div className="d-flex justify-content-between align-items-center">
                       <span className="small text-light opacity-75">{cat.count} Projects</span>
-                      <span className="text-gold fw-bold d-flex align-items-center gap-1" style={{color: 'var(--royal-blue)'}}>Explore <FaArrowRight size={12}/></span>
                     </div>
                   </div>
                 </div>

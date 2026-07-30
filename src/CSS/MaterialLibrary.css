@@ -49,6 +49,13 @@
   padding-bottom: 100px; /* Space at the bottom */
 }
 
+/* Fix iOS background-attachment fixed bug */
+@media (max-width: 1024px) {
+  .mat-hero {
+    background-attachment: scroll;
+  }
+}
+
 .mat-hero-overlay {
   position: absolute;
   top: 0;
@@ -756,15 +763,24 @@
 
 @media (max-width: 768px) {
   .mat-hero {
-    min-height: 70vh;
-    padding-top: 100px;
+    min-height: 100vh;
+    padding-top: 180px;
+    padding-bottom: 60px;
   }
   .mat-hero-content {
-    padding: 2rem 1.5rem;
-    margin: 0 15px;
+    padding: 2.5rem 1.5rem;
+    margin: 40px 15px 0 15px; /* Added top margin to push it down from navbar */
   }
   .mat-hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+  .mat-hero-desc {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .btn-mat-premium {
+    padding: 12px 25px;
+    font-size: 0.9rem;
   }
   .cat-grid {
     grid-template-columns: repeat(2, 1fr);

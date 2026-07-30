@@ -213,7 +213,7 @@ const StyleDiscovery = () => {
             ✨ STYLE DISCOVERY
           </motion.h4>
           <motion.h1 className="display-3 fw-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}} initial={{opacity:0, y:30}} animate={{opacity:1, y:0}} transition={{duration: 1, delay: 0.2}}>
-            Find the Interior Style<br/>That Reflects Your Personality
+            Find the <span className="style-gold-text">Interior Style</span><br/>That Reflects Your <span className="style-gold-text">Personality</span>
           </motion.h1>
           <motion.p className="lead mb-5 mx-auto" style={{maxWidth: '600px', opacity: 0.9}} initial={{opacity:0}} animate={{opacity:1}} transition={{duration: 1, delay: 0.4}}>
             Take our quick quiz and discover the perfect design style for your dream home.

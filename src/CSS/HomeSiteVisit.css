@@ -17,19 +17,20 @@
 .hsv-hero {
   position: relative;
   width: 100%;
-  height: 75vh;
-  min-height: 600px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 120px; /* Offset for navbar */
+  padding-top: 160px;
+  padding-bottom: 80px;
+  background-color: var(--hsv-text-dark);
 }
 
 @media (max-width: 768px) {
   .hsv-hero {
-    height: 50vh;
-    min-height: 400px;
+    min-height: 100vh;
+    padding-top: 180px;
   }
 }
 
@@ -37,8 +38,15 @@
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80') center/cover no-repeat;
+  background-attachment: fixed;
   z-index: 0;
   animation: hsvBgZoom 20s infinite alternate linear;
+}
+
+@media (max-width: 1024px) {
+  .hsv-hero-bg {
+    background-attachment: scroll;
+  }
 }
 
 .hsv-hero-overlay {
@@ -319,22 +327,40 @@
 @media (max-width: 991px) {
   .hsv-timeline {
     flex-direction: column;
-    padding-left: 50px;
+    padding-left: 20px;
   }
   .hsv-timeline::before {
-    top: 0; left: 38px; width: 4px; height: 100%;
+    top: 0; left: 45px; width: 4px; height: 100%;
+    background: linear-gradient(to bottom, var(--hsv-royal-blue), var(--hsv-border-light));
   }
   .hsv-timeline-step {
     text-align: left;
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 2;
+    margin-left: 20px;
   }
   .hsv-timeline-num {
     margin: 0 20px 0 0;
-    width: 60px; height: 60px;
-    font-size: 1.5rem;
+    width: 50px; height: 50px;
+    font-size: 1.3rem;
     flex-shrink: 0;
+    position: absolute;
+    left: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .hsv-timeline-step:hover .hsv-timeline-num {
+    transform: translateY(-50%) scale(1.1);
+  }
+  .hsv-timeline-text {
+    width: 100%;
   }
 }
 

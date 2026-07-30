@@ -43,24 +43,24 @@ export const MarqueeTestimonials = () => {
     <div className="py-8 overflow-hidden w-100">
       <Marquee pauseOnHover repeat={4} speed="normal">
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="mx-3 rounded-[1.75rem] bg-white border border-gray-100 p-6 flex flex-col" style={{width: '380px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)'}}>
-            <div className="mb-4 flex items-center space-x-3" style={{width: '350px', margin: '10px'}}>
+          <div key={index} className="mx-3 rounded-[1.75rem] bg-white border border-gray-100 p-6 flex flex-col" style={{width: '90vw', maxWidth: '380px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)'}}>
+            <div className="mb-4 flex items-center space-x-3" style={{width: '100%', margin: '10px 0'}}>
               <img
                 src={testimonial.avatar || "/placeholder.svg"}
                 alt={testimonial.name}
-                className="h-12 w-12 object-cover rounded-full"
+                className="h-12 w-12 object-cover rounded-full flex-shrink-0"
               />
               <div className="flex flex-col justify-center" >
-                <h4 className="font-semibold text-[16px] m-0 leading-tight" style={{margin: '8px', padding: '5px', color: '#111'}} >
+                <h4 className="font-semibold text-[16px] m-0 leading-tight" style={{margin: '8px 0', color: '#111'}} >
                   {testimonial.name}
                 </h4>
-                <p className="text-[13px] m-0 leading-tight mt-0.5 text-uppercase" style={{ padding: '5px', color: '#555'}} >{testimonial.role}</p>
+                <p className="text-[13px] m-0 leading-tight mt-0.5 text-uppercase" style={{ color: '#555'}} >{testimonial.role}</p>
               </div>
             </div>
-            <p className="mb-5 text-[14.5px] leading-relaxed font-medium" style={{width: '350px', margin: '10px', color: '#333'}}>
+            <p className="mb-5 text-[14.5px] leading-relaxed font-medium" style={{width: '100%', margin: '10px 0', color: '#333'}}>
               {testimonial.content}
             </p>
-            <div className="flex space-x-1.5 mt-auto pb-1" style={{width: '350px', margin: '10px'}}>
+            <div className="flex space-x-1.5 mt-auto pb-1" style={{width: '100%', margin: '10px 0'}}>
               {[...Array(testimonial.rating)].map((_, i) => (
                 <Star
                   key={i}

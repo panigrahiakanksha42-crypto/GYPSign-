@@ -14,7 +14,7 @@ const Footer = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="container footer-container py-5">
-        <div className="row g-5">
+        <div className="row gy-5 gx-4 gx-lg-5">
           {/* Section 1 - Brand Information */}
           <div className="col-12 col-md-6 col-lg-3 footer-brand-section text-center text-md-start">
             <h2 className="footer-logo mb-3">GYP Signatures</h2>
@@ -34,11 +34,11 @@ const Footer = () => {
             <h3 className="footer-heading mb-4">Quick Links</h3>
             <ul className="list-unstyled footer-links">
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/">About Us</Link></li>
-              <li><Link to="/">Portfolio</Link></li>
-              <li><Link to="/">Showcase</Link></li>
+              <li><Link to="/brand/about">About Us</Link></li>
+              <li><Link to="/portfolio">Portfolio</Link></li>
+              <li><Link to="/showcase">Showcase</Link></li>
               <li><Link to="/designs/materials">Materials</Link></li>
-              <li><Link to="/">Contact</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 

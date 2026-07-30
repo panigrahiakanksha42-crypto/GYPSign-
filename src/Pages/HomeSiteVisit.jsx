@@ -353,38 +353,50 @@ const HomeSiteVisit = () => {
             
             <motion.div className="hsv-timeline-step" variants={fadeUp}>
               <div className="hsv-timeline-num">1</div>
-              <h6 className="fw-bold">Designer Arrives</h6>
-              <p className="text-muted small">Prompt arrival at your scheduled time.</p>
+              <div className="hsv-timeline-text">
+                <h6 className="fw-bold mb-1">Designer Arrives</h6>
+                <p className="text-muted small mb-0">Prompt arrival at your scheduled time.</p>
+              </div>
             </motion.div>
             
             <motion.div className="hsv-timeline-step" variants={fadeUp}>
               <div className="hsv-timeline-num">2</div>
-              <h6 className="fw-bold">Space Measurement</h6>
-              <p className="text-muted small">Accurate laser dimensions of your rooms.</p>
+              <div className="hsv-timeline-text">
+                <h6 className="fw-bold mb-1">Space Measurement</h6>
+                <p className="text-muted small mb-0">Accurate laser dimensions of your rooms.</p>
+              </div>
             </motion.div>
 
             <motion.div className="hsv-timeline-step" variants={fadeUp}>
               <div className="hsv-timeline-num">3</div>
-              <h6 className="fw-bold">Design Discussion</h6>
-              <p className="text-muted small">Understanding your vision and lifestyle.</p>
+              <div className="hsv-timeline-text">
+                <h6 className="fw-bold mb-1">Design Discussion</h6>
+                <p className="text-muted small mb-0">Understanding your vision and lifestyle.</p>
+              </div>
             </motion.div>
 
             <motion.div className="hsv-timeline-step" variants={fadeUp}>
               <div className="hsv-timeline-num">4</div>
-              <h6 className="fw-bold">Material Suggestions</h6>
-              <p className="text-muted small">Reviewing physical samples together.</p>
+              <div className="hsv-timeline-text">
+                <h6 className="fw-bold mb-1">Material Suggestions</h6>
+                <p className="text-muted small mb-0">Reviewing physical samples together.</p>
+              </div>
             </motion.div>
 
             <motion.div className="hsv-timeline-step" variants={fadeUp}>
               <div className="hsv-timeline-num">5</div>
-              <h6 className="fw-bold">Budget Planning</h6>
-              <p className="text-muted small">Setting realistic financial expectations.</p>
+              <div className="hsv-timeline-text">
+                <h6 className="fw-bold mb-1">Budget Planning</h6>
+                <p className="text-muted small mb-0">Setting realistic financial expectations.</p>
+              </div>
             </motion.div>
 
             <motion.div className="hsv-timeline-step" variants={fadeUp}>
               <div className="hsv-timeline-num">6</div>
-              <h6 className="fw-bold">Next Steps</h6>
-              <p className="text-muted small">Moving towards final quotation and 3D.</p>
+              <div className="hsv-timeline-text">
+                <h6 className="fw-bold mb-1">Next Steps</h6>
+                <p className="text-muted small mb-0">Moving towards final quotation and 3D.</p>
+              </div>
             </motion.div>
 
           </motion.div>

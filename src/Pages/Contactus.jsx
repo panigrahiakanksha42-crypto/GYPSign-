@@ -43,7 +43,7 @@ const Contactus = () => {
             CONTACT US
           </motion.h4>
           <motion.h1 className="display-3 fw-bold mb-4" initial={{opacity:0, y:30}} animate={{opacity:1, y:0}} transition={{duration: 1, delay: 0.2}}>
-            Let's Build Something<br/>Beautiful Together
+            Let's Build <span className="contact-gold-text">Something</span><br/><span className="contact-gold-text">Beautiful</span> Together
           </motion.h1>
           <motion.p className="lead mb-5 pb-4 mx-auto" style={{maxWidth: '600px', opacity: 0.9}} initial={{opacity:0}} animate={{opacity:1}} transition={{duration: 1, delay: 0.4}}>
             Have a question or planning your dream home? Our experts are here to help.
@@ -348,16 +348,7 @@ const Contactus = () => {
         </div>
       </section>
 
-      {/* 10. GOOGLE MAP */}
-      <section id="map" className="map-section">
-        <iframe 
-          title="GYP Signatures Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d241317.11609823277!2d72.74109995736186!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1692185203387!5m2!1sen!2sin" 
-          allowFullScreen="" 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </section>
+
 
       {/* 11. SOCIAL MEDIA */}
       <section className="social-media-section">

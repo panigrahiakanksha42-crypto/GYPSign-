@@ -69,7 +69,7 @@ const ExperienceCenter = () => {
             EXPERIENCE CENTER
           </motion.h4>
           <motion.h1 className="display-3 fw-bold mb-4" initial={{opacity:0, y:30}} animate={{opacity:1, y:0}} transition={{duration: 1, delay: 0.2}}>
-            Experience Luxury Before<br/>You Bring It Home
+            Experience <span className="ec-gold-text">Luxury</span> Before<br/>You Bring It <span className="ec-gold-text">Home</span>
           </motion.h1>
           <motion.p className="lead mb-5 mx-auto pb-3" style={{maxWidth: '700px', opacity: 0.9}} initial={{opacity:0}} animate={{opacity:1}} transition={{duration: 1, delay: 0.4}}>
             Walk through beautifully designed spaces, explore premium materials, and meet our experts.

@@ -58,9 +58,14 @@ const ClientReviews = () => {
       <section className="reviews-hero">
         <div className="reviews-hero-bg"></div>
         <div className="reviews-hero-overlay"></div>
+        
+        {/* Animated Background Orbs */}
+        <div className="reviews-orb reviews-orb-1"></div>
+        <div className="reviews-orb reviews-orb-2"></div>
+
         <div className="container reviews-hero-content text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp}>
-            <div className="mb-4 pb-2">
+            <div className="mb-4">
               <span className="badge rounded-pill px-4 py-2 text-uppercase fw-bold shadow-sm" style={{
                 letterSpacing: '3px', 
                 fontSize: '0.85rem',
@@ -71,11 +76,11 @@ const ClientReviews = () => {
               }}>Client Reviews</span>
             </div>
             <motion.h1 
-              className="display-2 fw-bold mb-4 pb-2 font-playfair"
+              className="display-3 fw-bold mb-4 font-playfair"
               initial={{opacity: 0, scale: 0.95}} animate={{opacity: 1, scale: 1}}
               transition={{delay: 0.2, duration: 1}}
             >
-              Trusted by Families,<br className="d-none d-md-block"/>Loved for Craftsmanship
+              Trusted by <span className="review-gold-text">Families</span>,<br className="d-none d-md-block"/>Loved for <span className="review-gold-text">Craftsmanship</span>
             </motion.h1>
             <motion.p 
               className="lead fs-4 mb-5 mx-auto" 
@@ -86,7 +91,7 @@ const ClientReviews = () => {
               Real Stories. Real Homes. Real Experiences.
             </motion.p>
             
-            <motion.div className="mb-5" initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.6}}>
+            <motion.div className="mb-4" initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.6}}>
               <div className="rating-badge">
                 <span className="me-2" style={{color: '#FFD700'}}>★★★★★</span>
                 4.9 Rating
@@ -285,28 +290,31 @@ const ClientReviews = () => {
       </section>
 
       {/* 8. FEATURED TESTIMONIALS */}
-      <section className="py-5 bg-white">
+      <section className="py-5" style={{backgroundColor: 'var(--review-soft-gray)'}}>
         <div className="container py-5">
           <div className="text-center mb-5">
             <motion.h2 className="display-4 fw-bold font-playfair" initial="hidden" whileInView="visible" viewport={{once: true}} variants={fadeUp}>Client Testimonials</motion.h2>
           </div>
           
-          <div className="row g-0 justify-content-center">
+          <div className="row g-4 justify-content-center">
             {[
               {name: "Sarah Jenkins", text: "The craftsmanship is unparalleled. My modular kitchen looks stunning and functions perfectly."},
               {name: "David Smith", text: "Professional, punctual, and highly skilled. The wardrobe they built is the centerpiece of my bedroom."},
               {name: "Meera Patel", text: "I highly recommend GYP Signatures. They understood my vision and executed it flawlessly."}
             ].map((test, index) => (
               <motion.div className="col-md-4" key={index} initial="hidden" whileInView="visible" viewport={{once: true}} variants={fadeUp} transition={{delay: index * 0.2}}>
-                <div className="testimonial-card text-center">
-                  <FaQuoteLeft size={30} color="var(--review-card-border)" className="quote-icon mb-4 transition-all" />
-                  <div style={{color: '#FFD700', fontSize: '1.2rem'}} className="mb-3">★★★★★</div>
-                  <p className="text-muted mb-4" style={{fontStyle: 'italic', minHeight: '80px'}}>"{test.text}"</p>
-                  <div className="d-flex flex-column align-items-center">
-                    <div className="rounded-circle bg-light d-flex justify-content-center align-items-center mb-2" style={{width: '60px', height: '60px'}}>
-                      <span className="fw-bold fs-4 text-primary">{test.name.charAt(0)}</span>
+                <div className="testimonial-card h-100 text-center position-relative overflow-hidden d-flex flex-column justify-content-between">
+                  <FaQuoteLeft className="quote-watermark" />
+                  <div className="position-relative z-1 d-flex flex-column h-100">
+                    <div style={{color: '#FFD700', fontSize: '1.2rem'}} className="mb-3">★★★★★</div>
+                    <p className="testimonial-text mb-4 flex-grow-1">"{test.text}"</p>
+                    <div className="d-flex flex-column align-items-center">
+                      <div className="testimonial-avatar mb-3">
+                        {test.name.charAt(0)}
+                      </div>
+                      <h6 className="fw-bold m-0" style={{letterSpacing: '1px', textTransform: 'uppercase'}}>{test.name}</h6>
+                      <small className="text-muted mt-1">Verified Client</small>
                     </div>
-                    <h6 className="fw-bold m-0">{test.name}</h6>
                   </div>
                 </div>
               </motion.div>

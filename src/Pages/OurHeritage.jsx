@@ -41,6 +41,11 @@ const OurHeritage = () => {
       <section className="heritage-hero">
         <div className="heritage-hero-bg"></div>
         <div className="heritage-hero-overlay"></div>
+        
+        {/* Animated Background Orbs */}
+        <div className="heritage-orb heritage-orb-1"></div>
+        <div className="heritage-orb heritage-orb-2"></div>
+
         <div className="container heritage-hero-content text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp}>
             <div className="mb-4">
@@ -51,7 +56,7 @@ const OurHeritage = () => {
               initial={{opacity: 0, scale: 0.95}} animate={{opacity: 1, scale: 1}}
               transition={{delay: 0.2, duration: 1}}
             >
-              Every masterpiece begins with a dream,<br className="d-none d-md-block"/>a vision, and the courage to create.
+              Every masterpiece begins with a <span className="heritage-gold-text">dream</span>,<br className="d-none d-md-block"/>a <span className="heritage-gold-text">vision</span>, and the <span className="heritage-gold-text">courage</span> to create.
             </motion.h1>
             <motion.div 
               className="d-flex justify-content-center gap-4 mt-5 flex-column flex-sm-row"
